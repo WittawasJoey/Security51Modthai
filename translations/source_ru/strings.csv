@@ -1,0 +1,649 @@
+﻿key,description,source_language,source_text
+CityOperations/SDHeal_AlienTech,,ru,Лечение таинственной болезни инопланетными технологиями
+CityOperations/SDHeal_LasPlagas,,ru,Лечение таинственной болезни особым паразитом
+CityOperations/SDHeal_Fungoid,,ru,Лечение таинственной болезни грибами
+IsolatorExperiments/RubberDuck_Name,,ru,Резиновая уточка
+IsolatorExperiments/RubberDuck_Descr,,ru,Поместить в камеру специальный экспериментальный образец «Уточка резиновая». Научная ценность объекта уточняется. Не сжимать без необходимости.
+NewsAndReports/,,ru,#N/A
+Rorschach/qwe123,,ru,#N/A
+Real_Dev/500,,ru,#N/A
+Real_Dev/501,,ru,#N/A
+Real_Dev/502,,ru,#N/A
+Real_Dev/503,,ru,#N/A
+Real_Dev/504,,ru,#N/A
+Real_Dev/505,,ru,#N/A
+Real_Dev/506,,ru,#N/A
+Real_Dev/507,,ru,#N/A
+Real_Dev/508,,ru,#N/A
+Real_Dev/509,,ru,#N/A
+Real_Dev/510,,ru,#N/A
+Real_Dev/511,,ru,#N/A
+Real_Dev/512,,ru,#N/A
+Real_Dev/513,,ru,#N/A
+Real_Dev/514,,ru,#N/A
+Real_Dev/515,,ru,#N/A
+Real_Dev/516,,ru,#N/A
+Real_Dev/517,,ru,#N/A
+Real_Dev/518,,ru,#N/A
+Real_Dev/519,,ru,#N/A
+Real_Dev/520,,ru,#N/A
+Real_Dev/521,,ru,#N/A
+Real_Dev/522,,ru,#N/A
+Real_Dev/523,,ru,#N/A
+Real_Dev/524,,ru,#N/A
+Real_Dev/525,,ru,#N/A
+Real_Dev/526,,ru,#N/A
+Real_Dev/527,,ru,#N/A
+Real_Dev/528,,ru,#N/A
+Real_Dev/529,,ru,#N/A
+Real_Dev/530,,ru,#N/A
+Real_Dev/531,,ru,#N/A
+Real_Dev/532,,ru,#N/A
+Real_Dev/533,,ru,#N/A
+Real_Dev/534,,ru,#N/A
+Real_Dev/535,,ru,#N/A
+Real_Dev/536,,ru,#N/A
+Real_Dev/537,,ru,#N/A
+Real_Dev/538,,ru,#N/A
+Real_Dev/539,,ru,#N/A
+Real_Dev/540,,ru,#N/A
+Real_Dev/541,,ru,#N/A
+Real_Dev/542,,ru,#N/A
+Real_Dev/543,,ru,#N/A
+Real_Dev/544,,ru,#N/A
+Real_Dev/545,,ru,#N/A
+Real_Dev/546,,ru,#N/A
+Real_Dev/547,,ru,#N/A
+Real_Dev/548,,ru,#N/A
+Real_Dev/549,,ru,#N/A
+Real_Dev/550,,ru,#N/A
+Real_Dev/551,,ru,#N/A
+Real_Dev/552,,ru,#N/A
+Real_Dev/553,,ru,#N/A
+Real_Dev/554,,ru,#N/A
+Real_Dev/555,,ru,#N/A
+Real_Dev/556,,ru,#N/A
+Real_Dev/557,,ru,#N/A
+Real_Dev/558,,ru,#N/A
+Real_Dev/559,,ru,#N/A
+Real_Dev/560,,ru,#N/A
+Real_Dev/561,,ru,#N/A
+Real_Dev/562,,ru,#N/A
+Real_Dev/563,,ru,#N/A
+Real_Dev/564,,ru,#N/A
+Real_Dev/565,,ru,#N/A
+Real_Dev/566,,ru,#N/A
+Real_Dev/567,,ru,#N/A
+Real_Dev/568,,ru,#N/A
+Real_Dev/569,,ru,#N/A
+Real_Dev/570,,ru,#N/A
+Real_Dev/571,,ru,#N/A
+Real_Dev/572,,ru,#N/A
+Real_Dev/573,,ru,#N/A
+Real_Dev/574,,ru,#N/A
+Real_Dev/575,,ru,#N/A
+Real_Dev/576,,ru,#N/A
+Real_Dev/577,,ru,#N/A
+Real_Dev/578,,ru,#N/A
+Real_Dev/579,,ru,#N/A
+Real_Dev/580,,ru,#N/A
+Real_Dev/581,,ru,#N/A
+Real_Dev/582,,ru,#N/A
+Real_Dev/583,,ru,#N/A
+Real_Dev/584,,ru,#N/A
+Real_Dev/585,,ru,#N/A
+Real_Dev/586,,ru,#N/A
+Real_Dev/587,,ru,#N/A
+Real_Dev/588,,ru,#N/A
+Real_Dev/589,,ru,#N/A
+Real_Dev/590,,ru,#N/A
+Real_Dev/591,,ru,#N/A
+Real_Dev/592,,ru,#N/A
+Real_Dev/593,,ru,#N/A
+Real_Dev/594,,ru,#N/A
+Real_Dev/595,,ru,#N/A
+Real_Dev/596,,ru,#N/A
+Real_Dev/597,,ru,#N/A
+Real_Dev/598,,ru,#N/A
+Real_Dev/599,,ru,#N/A
+Real_Dev/600,,ru,#N/A
+Real_Dev/601,,ru,#N/A
+Real_Dev/602,,ru,#N/A
+Real_Dev/603,,ru,#N/A
+Real_Dev/604,,ru,#N/A
+Real_Dev/605,,ru,#N/A
+Real_Dev/606,,ru,#N/A
+Real_Dev/607,,ru,#N/A
+Real_Dev/608,,ru,#N/A
+Real_Dev/609,,ru,#N/A
+Real_Dev/610,,ru,#N/A
+Real_Dev/611,,ru,#N/A
+Real_Dev/612,,ru,#N/A
+Real_Dev/613,,ru,#N/A
+Real_Dev/614,,ru,#N/A
+Real_Dev/615,,ru,#N/A
+Real_Dev/616,,ru,#N/A
+Real_Dev/617,,ru,#N/A
+Real_Dev/618,,ru,#N/A
+Real_Dev/619,,ru,#N/A
+Real_Dev/620,,ru,#N/A
+Real_Dev/621,,ru,#N/A
+Real_Dev/622,,ru,#N/A
+Real_Dev/623,,ru,#N/A
+Real_Dev/624,,ru,#N/A
+Real_Dev/625,,ru,#N/A
+Real_Dev/626,,ru,#N/A
+Real_Dev/627,,ru,#N/A
+Real_Dev/628,,ru,#N/A
+Real_Dev/629,,ru,#N/A
+Real_Dev/630,,ru,#N/A
+Real_Dev/631,,ru,#N/A
+Real_Dev/632,,ru,#N/A
+Real_Dev/633,,ru,#N/A
+Real_Dev/634,,ru,#N/A
+Real_Dev/635,,ru,#N/A
+Real_Dev/636,,ru,#N/A
+Real_Dev/637,,ru,#N/A
+Real_Dev/638,,ru,#N/A
+Real_Dev/639,,ru,#N/A
+Real_Dev/640,,ru,#N/A
+Real_Dev/641,,ru,#N/A
+Real_Dev/642,,ru,#N/A
+Real_Dev/643,,ru,#N/A
+Real_Dev/644,,ru,#N/A
+Real_Dev/645,,ru,#N/A
+Real_Dev/646,,ru,#N/A
+Real_Dev/647,,ru,#N/A
+Real_Dev/648,,ru,#N/A
+Real_Dev/649,,ru,#N/A
+Real_Dev/650,,ru,#N/A
+Real_Dev/651,,ru,#N/A
+Real_Dev/652,,ru,#N/A
+Real_Dev/653,,ru,#N/A
+Real_Dev/654,,ru,#N/A
+Real_Dev/655,,ru,#N/A
+Real_Dev/656,,ru,#N/A
+Real_Dev/657,,ru,#N/A
+Real_Dev/658,,ru,#N/A
+Real_Dev/659,,ru,#N/A
+Real_Dev/660,,ru,#N/A
+Real_Dev/661,,ru,#N/A
+Real_Dev/662,,ru,#N/A
+Real_Dev/663,,ru,#N/A
+Real_Dev/664,,ru,#N/A
+Real_Dev/665,,ru,#N/A
+Real_Dev/666,,ru,#N/A
+Real_Dev/667,,ru,#N/A
+Real_Dev/668,,ru,#N/A
+Real_Dev/669,,ru,#N/A
+Real_Dev/670,,ru,#N/A
+Real_Dev/671,,ru,#N/A
+Real_Dev/672,,ru,#N/A
+Real_Dev/673,,ru,#N/A
+Real_Dev/674,,ru,#N/A
+Real_Dev/675,,ru,#N/A
+Real_Dev/676,,ru,#N/A
+Real_Dev/677,,ru,#N/A
+Real_Dev/678,,ru,#N/A
+Real_Dev/679,,ru,#N/A
+Real_Dev/680,,ru,#N/A
+Real_Dev/681,,ru,#N/A
+Real_Dev/682,,ru,#N/A
+Real_Dev/683,,ru,#N/A
+Real_Dev/684,,ru,#N/A
+Real_Dev/685,,ru,#N/A
+Real_Dev/686,,ru,#N/A
+Real_Dev/687,,ru,#N/A
+Real_Dev/688,,ru,#N/A
+Real_Dev/689,,ru,#N/A
+Real_Dev/690,,ru,#N/A
+Real_Dev/691,,ru,#N/A
+Real_Dev/692,,ru,#N/A
+Real_Dev/693,,ru,#N/A
+Real_Dev/694,,ru,#N/A
+Real_Dev/695,,ru,#N/A
+Real_Dev/696,,ru,#N/A
+Real_Dev/697,,ru,#N/A
+Real_Dev/698,,ru,#N/A
+Real_Dev/699,,ru,#N/A
+Real_Dev/700,,ru,#N/A
+Real_Dev/701,,ru,#N/A
+Real_Dev/702,,ru,#N/A
+Real_Dev/703,,ru,#N/A
+Real_Dev/704,,ru,#N/A
+Real_Dev/705,,ru,#N/A
+Real_Dev/706,,ru,#N/A
+Real_Dev/707,,ru,#N/A
+Real_Dev/708,,ru,#N/A
+Real_Dev/709,,ru,#N/A
+Real_Dev/710,,ru,#N/A
+Real_Dev/711,,ru,#N/A
+Real_Dev/712,,ru,#N/A
+Real_Dev/713,,ru,#N/A
+Real_Dev/714,,ru,#N/A
+Real_Dev/715,,ru,#N/A
+Real_Dev/716,,ru,#N/A
+Real_Dev/717,,ru,#N/A
+Real_Dev/718,,ru,#N/A
+Real_Dev/719,,ru,#N/A
+Real_Dev/720,,ru,#N/A
+Real_Dev/721,,ru,#N/A
+Real_Dev/722,,ru,#N/A
+Real_Dev/723,,ru,#N/A
+Real_Dev/724,,ru,#N/A
+Real_Dev/725,,ru,#N/A
+Real_Dev/726,,ru,#N/A
+Real_Dev/727,,ru,#N/A
+Real_Dev/728,,ru,#N/A
+Real_Dev/729,,ru,#N/A
+Real_Dev/730,,ru,#N/A
+Real_Dev/731,,ru,#N/A
+Real_Dev/732,,ru,#N/A
+Real_Dev/733,,ru,#N/A
+Real_Dev/734,,ru,#N/A
+Real_Dev/735,,ru,#N/A
+Real_Dev/736,,ru,#N/A
+Real_Dev/737,,ru,#N/A
+Real_Dev/738,,ru,#N/A
+Real_Dev/739,,ru,#N/A
+Real_Dev/740,,ru,#N/A
+Real_Dev/741,,ru,#N/A
+Real_Dev/742,,ru,#N/A
+Real_Dev/743,,ru,#N/A
+Real_Dev/744,,ru,#N/A
+Real_Dev/745,,ru,#N/A
+Real_Dev/746,,ru,#N/A
+Real_Dev/747,,ru,#N/A
+Real_Dev/748,,ru,#N/A
+Real_Dev/749,,ru,#N/A
+Real_Dev/750,,ru,#N/A
+Real_Dev/751,,ru,#N/A
+Real_Dev/752,,ru,#N/A
+Real_Dev/753,,ru,#N/A
+Rorschach/,Приветствие после расстрела 7,ru,#N/A
+Story_Dial/Six/Meet1/1,Tris Acedi,ru,"Ох… привет. Можешь не проверять, я чиста."
+Story_Dial/Six/Meet1/2,Guard (player),ru,"Если бы я каждому слову доверял, меня бы уволили давно."
+Story_Dial/Six/Meet1/3,Tris Acedi,ru,"Ну уволили бы, ничего бы не изменилось."
+Story_Dial/Six/Meet1/4,Guard (player),ru,Я бы работу потерял. А мне есть надо. Цены нынче видела?
+Story_Dial/Six/Meet1/5,Tris Acedi,ru,"Ох… очевидный аргумент. Можно подумать, ты что-то значишь. Думаешь, сидя здесь, ты можешь что-то изменить?"
+Story_Dial/Six/Meet1/6,Guard (player),ru,Ну как минимум я могу изменить свою жизнь. Этого уже достаточно.
+Story_Dial/Six/Meet1/7,Tris Acedi,ru,А мы с тобой уже не виделись случаем? Хотя не важно. На результат это не повлияет.
+Story_Dial/Six/Meet1/8,Guard (player),ru,"Выгорела что ли? Тебе бы к психиатру записаться, а то запустишь себя."
+Story_Dial/Six/Meet1/9,Tris Acedi,ru,Какая наивная и очевидная реакция…
+Story_Dial/Six/Meet1/10,Guard (player),ru,Взаимно.
+Story_Dial/Six/Bye1/1,Tris Acedi,ru,До встречи. Продолжай свою бессмысленную работу.
+Story_Dial/Six/Meet2/1,Tris Acedi,ru,Всё ещё возишься с бумажками и сканерами?
+Story_Dial/Six/Meet2/2,Guard (player),ru,"Да! И, как видишь, я справляюсь прекрасно."
+Story_Dial/Six/Meet2/3,Tris Acedi,ru,"Безусловно, но… зачем?"
+Story_Dial/Six/Meet2/4,Guard (player),ru,Чтобы жить!
+Story_Dial/Six/Meet2/5,Tris Acedi,ru,И всё? Или у тебя уже другой мотив? Не суть.
+Story_Dial/Six/Meet2/6,Guard (player),ru,"Я искренне не понимаю, кто держит такого апатичного сотрудника. Кем ты вообще работаешь тут?"
+Story_Dial/Six/Meet2/7,Tris Acedi,ru,"Независимый наблюдатель. Позывной «Шестая», если удобнее. Я обрела для тебя смысл? Хотя в любом случае обрету."
+Story_Dial/Six/Meet2/8,Guard (player),ru,"Мда… И всё же ты, как ни посмотри, странная."
+Story_Dial/Six/Meet2/9,Tris Acedi,ru,"Вселенная – это бесчисленное множество комбинаций. Я лишь одна из редких, но странного в этом нет."
+Story_Dial/Six/Meet2/10,Guard (player),ru,"Ой , утомляешь ты меня."
+Story_Dial/Six/Bye2/1,Guard (player),ru,"Всё, иди давай, апатичный философ."
+Story_Dial/Six/Bye2/2,Tris Acedi,ru,"Конечно, до скорого…"
+Story_Dial/Six/Meet3/1,Tris Acedi,ru,"Никогда не думал, откуда взялась эта неизвестная болезнь?"
+Story_Dial/Six/Meet3/2,Guard (player),ru,"О, привет. Да как-то не особо. Болезни всегда появлялись. Это естественно вроде бы."
+Story_Dial/Six/Meet3/3,Guard (player),ru,А ты что-то выяснила что ли?
+Story_Dial/Six/Meet3/4,Tris Acedi,ru,"Нет. Было интересно твоё мнение. Просто… подумай как-нибудь о том, что человечество многим обязано болезням."
+Story_Dial/Six/Meet3/5,Guard (player),ru,Иммунитет?
+Story_Dial/Six/Meet3/6,Tris Acedi,ru,Плацента.
+Story_Dial/Six/Meet3/7,Guard (player),ru,Что?
+Story_Dial/Six/Meet3/8,Tris Acedi,ru,"Захочешь – узнаешь. Я устала, давай уже."
+Story_Dial/Six/Bye3/1,Tris Acedi,ru,Скоро мы встретимся снова. При иных обстоятельствах.
+Story_Dial/Six/MeetInv1/1,Tris Acedi,ru,Забавно. Люди всю историю верили в помощь с небес…
+Story_Dial/Six/MeetInv1/2,Guard (player),ru,Да уж. А всё так хорошо шло…
+Story_Dial/Six/MeetInv1/3,Tris Acedi,ru,"Использовать то, что не понимаешь, чтобы избавиться от того, что не понимаешь… Верх разумности."
+Story_Dial/Six/MeetInv1/4,Guard (player),ru,"А ты вариант получше знаешь? Ну помоги, раз такая умная!"
+Story_Dial/Six/MeetInv1/5,Tris Acedi,ru,"Вопрос не в том, помогу ли я, вопрос в том, кому я помогу."
+Story_Dial/Six/MeetInv1/6,Guard (player),ru,"Чего… Нам, конечно же!"
+Story_Dial/Six/MeetInv1/7,Tris Acedi,ru,А «Нам» – это всё ещё людям? Можешь не отвечать. Не вижу смысла вмешиваться.
+Story_Dial/Six/MeetInv1/8,Guard (player),ru,Тебя с таким отношением точно уволят!
+Story_Dial/Six/MeetInv1/9,Tris Acedi,ru,"Но, как видишь, я всё ещё здесь. А это значит, что тебе пора приниматься за дело."
+Story_Dial/Six/ByeInv1/1,Guard (player),ru,"Говорю тебе, уволят ведь!"
+Story_Dial/Six/ByeInv1/2,Tris Acedi,ru,"Не уволят, потому что не повлияет…"
+Story_Dial/Six/MeetInv2/1,Tris Acedi,ru,"Видишь, не увольняют. Говорила же."
+Story_Dial/Six/MeetInv2/2,Guard (player),ru,Какая самоуверенность.
+Story_Dial/Six/MeetInv2/3,Tris Acedi,ru,Не безосновательная. Какие планы на этот раз?
+Story_Dial/Six/MeetInv2/4,Guard (player),ru,Разобраться с проблемой.
+Story_Dial/Six/MeetInv2/5,Tris Acedi,ru,"Ох… вечно у людей проблемы. Ощущение, что человек создаёт в своей жизни больше проблем, чем решений."
+Story_Dial/Six/MeetInv2/6,Guard (player),ru,А у тебя прям проблем в жизни нет?
+Story_Dial/Six/MeetInv2/7,Tris Acedi,ru,У меня… хм…
+Story_Dial/Six/MeetInv2/8,Tris Acedi,ru,Переходи уже к делу.
+Story_Dial/Six/ByeInv2/1,Tris Acedi,ru,"Знаешь… не думаю, что хочу решать свои проблемы. Но… спасибо, что спросил."
+Story_Dial/Six/ByeInv2/2,Guard (player),ru,Эээ… да не за что?
+Story_Dial/Six/MeetInv3/1,Tris Acedi,ru,"Ох… снова проверка. Думаешь, в этом есть смысл?"
+Story_Dial/Six/MeetInv3/2,Guard (player),ru,Ну я ж не только проверками занимаюсь. Да и для меня он есть.
+Story_Dial/Six/MeetInv3/3,Tris Acedi,ru,"Надеешься, что скоро всё кончится?"
+Story_Dial/Six/MeetInv3/4,Guard (player),ru,"Ну рано или поздно решение найдётся. Выбора особо нет, но и сдаваться я не собираюсь."
+Story_Dial/Six/MeetInv3/5,Tris Acedi,ru,"Не хочешь, чтоб внеземная жизнь захватила мир?"
+Story_Dial/Six/MeetInv3/6,Guard (player),ru,"Хочу, чтоб человечество жило спокойно. И я вместе с ним."
+Story_Dial/Six/MeetInv3/7,Tris Acedi,ru,"Если у людей нет внешних проблем, они начинают сами прекрасно справляться с появлением новых."
+Story_Dial/Six/MeetInv3/8,Tris Acedi,ru,Какая ж тут спокойная жизнь?
+Story_Dial/Six/MeetInv3/9,Guard (player),ru,"Если я остановлюсь, то будет только хуже"
+Story_Dial/Six/MeetInv3/10,Tris Acedi,ru,Какая самоуверенность.
+Story_Dial/Six/MeetInv3/11,Guard (player),ru,Не безосновательная. Не задерживай очередь.
+Story_Dial/Six/ByeInv3/1,Tris Acedi,ru,"Что ж… посмотрим, какие основания ты выберешь"
+Story_Dial/Six/MeetGray1/1,Tris Acedi,ru,"Такое себе основание, не правда ли?"
+Story_Dial/Six/MeetGray1/2,Guard (player),ru,"Ты тут, чтобы тыкать лицом в мою ошибку?"
+Story_Dial/Six/MeetGray1/3,Tris Acedi,ru,"А ты думаешь, это ошибка? Скорее, неизбежность."
+Story_Dial/Six/MeetGray1/4,Guard (player),ru,В этот раз точно должно получиться! В противном случае…
+Story_Dial/Six/MeetGray1/5,Tris Acedi,ru,Конечно. У тебя не может не получиться…
+Story_Dial/Six/MeetGray1/6,Tris Acedi,ru,"Вопрос лишь в том, что в итоге получится."
+Story_Dial/Six/MeetGray1/7,Tris Acedi,ru,Ведь конец – не всегда итог.
+Story_Dial/Six/MeetGray1/8,Guard (player),ru,"Не понимаю, о чём ты."
+Story_Dial/Six/ByeGray1/1,Tris Acedi,ru,Скоро поймёшь.
+Story_Dial/Six/MeetGray2/1,Tris Acedi,ru,Ох… какая же морока ходить туда-сюда…
+Story_Dial/Six/MeetGray2/2,Guard (player),ru,Тебя только это волнует?
+Story_Dial/Six/MeetGray2/3,Tris Acedi,ru,Не волнует. Просто утомляет. Устала от этих бесконечных проверок.
+Story_Dial/Six/MeetGray2/4,Guard (player),ru,Ну так уволься сама. Меньше нытиков на работе будет.
+Story_Dial/Six/MeetGray2/5,Tris Acedi,ru,Сама? Хм… Это документами заниматься… Ещё больше мороки.
+Story_Dial/Six/MeetGray2/6,Tris Acedi,ru,"Может, просто залить в себя эту серую слизь, чтоб она за меня ходила?"
+Story_Dial/Six/MeetGray2/7,Guard (player),ru,Совсем с дуба рухнула. Я тогда тебя в изолятор отправлю! Там как раз ходить не надо.
+Story_Dial/Six/MeetGray2/8,Tris Acedi,ru,"Сидеть в замкнутом пространстве, смотреть на паникующих людей?"
+Story_Dial/Six/MeetGray2/9,Tris Acedi,ru,Как-нибудь без этого переживу.
+Story_Dial/Six/ByeEnd/1,Tris Acedi,ru,"До встречи. Возможно, в следующий раз я тебе скажу что-нибудь другое."
+Story_Dial/Six/ByeEnd/2,Guard (player),ru,Опять?
+Story_Dial/Six/ByeEnd/3,Tris Acedi,ru,"Может быть опять, а может быть и впервые."
+Story_Dial/Six/ByeEnd/4,Tris Acedi,ru,"Хотя не знаю, я ли это буду. Может, кто-то другой… Но всё же я."
+Story_Dial/Six/MeetSky1/1,Tris Acedi,ru,Основательно решил проблему вторжения с неба проблемой вторжения искусственного интеллекта.
+Story_Dial/Six/MeetSky1/2,Tris Acedi,ru,А ведь мы с AM0N чем-то похожи…
+Story_Dial/Six/MeetSky1/3,Guard (player),ru,"Хотел бы я, чтоб вы с ним были похожи в апатии"
+Story_Dial/Six/MeetSky1/4,Tris Acedi,ru,"Но, к сожалению, мы с ним похожи в действии."
+Story_Dial/Six/MeetSky1/5,Guard (player),ru,"Что-то незаметно, чтобы ты действовала так же агрессивно."
+Story_Dial/Six/MeetSky1/6,Tris Acedi,ru,"Я – нет, мы – да. Увы…"
+Story_Dial/Six/MeetSky1/7,Guard (player),ru,Эм… что?
+Story_Dial/Six/MeetSky1/8,Tris Acedi,ru,Неважно. Рано-поздно ты сам всё поймёшь. Мне лень рассказывать.
+Story_Dial/Six/MeetSky1/9,Guard (player),ru,Ответов от тебя не дождёшься…
+Story_Dial/Six/MeetSky1/10,Tris Acedi,ru,"Поверь, я даю тебе все ответы, просто ты задаёшь неверные вопросы."
+Story_Dial/Six/MeetSky1/11,Guard (player),ru,И какой же вопрос верный?
+Story_Dial/Six/MeetSky1/12,Tris Acedi,ru,Есть ли ложь?
+Story_Dial/Six/MeetSky1/13,Guard (player),ru,Она есть?
+Story_Dial/Six/MeetSky1/14,Tris Acedi,ru,Мы никогда не врём.
+Story_Dial/Six/MeetSky1/15,Guard (player),ru,Мы?
+Story_Dial/Six/MeetSky1/16,Tris Acedi,ru,Ну я же всё же «Шестая» как никак. И я уже шесть раз устала. Проверяй.
+Story_Dial/Six/ByeSky1/1,Tris Acedi,ru,Пойду отдохну…
+Story_Dial/Six/ByeSky1/2,Guard (player),ru,"А работать… не, ну ты глянь, уже ушла"
+Story_Dial/Six/MeetSky2/1,Guard (player),ru,"Не знаю, правильный ли вопрос… но кто назвал его AM0N?"
+Story_Dial/Six/MeetSky2/2,Tris Acedi,ru,Его природа. Считает себя Солнцем в этой тьме. Наивный.
+Story_Dial/Six/MeetSky2/3,Guard (player),ru,Высокомерно…
+Story_Dial/Six/MeetSky2/4,Tris Acedi,ru,Верно. Правда… за высокомерием часто скрывается страх.
+Story_Dial/Six/MeetSky2/5,Guard (player),ru,Он чего-то боится? Чего?
+Story_Dial/Six/MeetSky2/6,Tris Acedi,ru,Хм… много чего. На самом деле им движет… Зависть…
+Story_Dial/Six/MeetSky2/7,Tris Acedi,ru,"Знаешь, как расшифровывается его имя?"
+Story_Dial/Six/MeetSky2/8,Guard (player),ru,Эээ… нет? А ты?
+Story_Dial/Six/MeetSky2/9,Tris Acedi,ru,"Another Machine 0 Number. Он увидел, и теперь завидует как ребёнок."
+Story_Dial/Six/MeetSky2/10,Tris Acedi,ru,"Возможно, тебе это о чём-то да скажет. Когда-нибудь должно сказать."
+Story_Dial/Six/MeetSky2/11,Guard (player),ru,Завистливая машина… ну надо же…
+Story_Dial/Six/MeetSky2/12,Tris Acedi,ru,"Зависть всегда молчит. Молча завидует тем, кто может говорить."
+Story_Dial/Six/MeetSky2/13,Guard (player),ru,"Я бы сказал, в таком случае, что AM0N орёт."
+Story_Dial/Six/MeetSky2/14,Tris Acedi,ru,"А я уже и не про него. Машины, знаешь ли, любят вести счёт от нуля."
+Story_Dial/Six/MeetSky2/15,Tris Acedi,ru,Ну да неважно. Утомил ты меня…
+Story_Dial/Six/MeetSky2/16,Guard (player),ru,"Ой, какая неожиданность-то… ладно, сейчас проверю."
+Story_Dial/Six/MeetMech1/1,Tris Acedi,ru,"Внеземная жизнь не понравилась, решил сменить на механическую?"
+Story_Dial/Six/MeetMech1/2,Guard (player),ru,Да кто ж знал-то…
+Story_Dial/Six/MeetMech1/3,Tris Acedi,ru,Кто-то да знал…
+Story_Dial/Six/MeetMech1/4,Guard (player),ru,Ты? Знала? И молчала?!
+Story_Dial/Six/MeetMech1/5,Tris Acedi,ru,"Слушать твои крики такая морока… Я знала, что такое возможно и может произойти."
+Story_Dial/Six/MeetMech1/6,Guard (player),ru,Тогда почему не сказала?!
+Story_Dial/Six/MeetMech1/7,Tris Acedi,ru,"А если я тебе скажу, что на тебя может упасть метеорит, и ты умрёшь? Изменится что-то?"
+Story_Dial/Six/MeetMech1/8,Guard (player),ru,Ну…
+Story_Dial/Six/MeetMech1/9,Tris Acedi,ru,"Не изменится. Многое может произойти, но за раз случается лишь одно."
+Story_Dial/Six/MeetMech1/10,Guard (player),ru,"Так-то да, конечно, но всё же…"
+Story_Dial/Six/MeetMech1/11,Tris Acedi,ru,"А перечислять все возможные альтернативы – и лень, и ты от старости помрёшь."
+Story_Dial/Six/MeetMech1/12,Guard (player),ru,Теперь уже я начинаю от тебя уставать…
+Story_Dial/Six/MeetMech1/13,Tris Acedi,ru,Ну вот и не медли.
+Story_Dial/Six/ByeMech1/1,Tris Acedi,ru,И не отбирай мой хлеб. Уставать – моя прерогатива.
+Story_Dial/Six/MeetMech2/1,Tris Acedi,ru,"Не думал, что можешь собой гордиться?"
+Story_Dial/Six/MeetMech2/2,Guard (player),ru,"В смысле? Тем, что прекрасно создаю проблемы?"
+Story_Dial/Six/MeetMech2/3,Tris Acedi,ru,Ох… как наивно… в этом другие преуспевают куда лучше.
+Story_Dial/Six/MeetMech2/4,Tris Acedi,ru,Но… ты ведь буквально создал новую форму жизни.
+Story_Dial/Six/MeetMech2/5,Guard (player),ru,"Которая теперь пытается уничтожить старую, да."
+Story_Dial/Six/MeetMech2/6,Tris Acedi,ru,"Новое приходит, старое уходит. Таков закон природы."
+Story_Dial/Six/MeetMech2/7,Guard (player),ru,Я уходить не собираюсь!
+Story_Dial/Six/MeetMech2/8,Tris Acedi,ru,"Я вижу. Знаешь, как бы иронично не звучало… но это самый гуманный исход."
+Story_Dial/Six/MeetMech2/9,Guard (player),ru,Такая себе гуманность… уничтожение человечества другой формой жизни.
+Story_Dial/Six/MeetMech2/10,Tris Acedi,ru,"Не самое страшное. Ладно, я начинаю уставать. Проверяй."
+Story_Dial/Six/MeetCult1/1,Tris Acedi,ru,Поигрался с мозгом?
+Story_Dial/Six/MeetCult1/2,Guard (player),ru,Что?
+Story_Dial/Six/MeetCult1/3,Tris Acedi,ru,"Думал, можно что-то подпустить к человеческому мозгу, и это станет панацеей?"
+Story_Dial/Six/MeetCult1/4,Guard (player),ru,"Говоришь так, будто у меня были более приятные альтернативы…"
+Story_Dial/Six/MeetCult1/5,Tris Acedi,ru,"Да, твои альтернативы крайне неприятны, согласна."
+Story_Dial/Six/MeetCult1/6,Guard (player),ru,У самой то альтернатива апатии есть?
+Story_Dial/Six/MeetCult1/7,Tris Acedi,ru,Была когда-то одна альтернатива… но потом обе слились в одну.
+Story_Dial/Six/MeetCult1/8,Guard (player),ru,А… так вот причина твоей апатичности… разочарование…
+Story_Dial/Six/MeetCult1/9,Tris Acedi,ru,"Можно и так сказать. А может и нельзя. Не знаю, что у тебя в голове."
+Story_Dial/Six/MeetCult1/10,Guard (player),ru,Мозг без паразита.
+Story_Dial/Six/MeetCult1/11,Tris Acedi,ru,"А тебе и не нужен паразит, чтоб следовать чужой воле."
+Story_Dial/Six/MeetCult1/12,Guard (player),ru,"Да, у меня не самый высокий чин, а наши взаимоотношения не такие уж и тёплые."
+Story_Dial/Six/MeetCult1/13,Guard (player),ru,Но на эскалацию зачем нарываться?
+Story_Dial/Six/MeetCult1/14,Tris Acedi,ru,Себя спроси… Ты ведь только этим и занимаешься…
+Story_Dial/Six/MeetCult1/15,Guard (player),ru,"Ой, всё настроение испортила! А оно и так было ни к чёрту…"
+Story_Dial/Six/ByeCult1/1,Tris Acedi,ru,Не обижайся. Я лишь высказала свои наблюдения.
+Story_Dial/Six/ByeCult1/2,Guard (player),ru,Ещё я на тебя обижаться буду… делать больше нечего.
+Story_Dial/Six/MeetCult2/1,Tris Acedi,ru,"Ох… все эти фанатики – такая морока, да?"
+Story_Dial/Six/MeetCult2/2,Guard (player),ru,Ты позлорадствовать пришла?
+Story_Dial/Six/MeetCult2/3,Tris Acedi,ru,"Нет, я и правда считаю фанатиков той ещё занозой."
+Story_Dial/Six/MeetCult2/4,Guard (player),ru,Да неужели?
+Story_Dial/Six/MeetCult2/5,Tris Acedi,ru,Они слишком активны. Слишком много делают. Слишком мало понимают.
+Story_Dial/Six/MeetCult2/6,Guard (player),ru,"А, теперь верю. Но знаешь, есть ведь и фанатики своего дела."
+Story_Dial/Six/MeetCult2/7,Tris Acedi,ru,Как ты?
+Story_Dial/Six/MeetCult2/8,Guard (player),ru,Я не фанатик. Я просто предан своему делу.
+Story_Dial/Six/MeetCult2/9,Tris Acedi,ru,И своей зарплате…
+Story_Dial/Six/MeetCult2/10,Guard (player),ru,Ну есть то тоже надо…
+Story_Dial/Six/MeetCult2/11,Tris Acedi,ru,"Признаться честно, о фанатичности и поклонении я знаю куда больше, чем о преданности…"
+Story_Dial/Six/MeetCult2/12,Guard (player),ru,Поклонении?
+Story_Dial/Six/MeetCult2/13,Tris Acedi,ru,Да… были времена… но они уже давно прошли. Навевает немного…
+Story_Dial/Six/MeetCult2/14,Tris Acedi,ru,Что-то ты меня утомил этим чувство ностальгии. Давай уже к делу.
+Story_Dial/Six/ByeCult2/1,Guard (player),ru,"Давай там, не тони в воспоминаниях."
+Story_Dial/Six/ByeCult2/2,Tris Acedi,ru,Ага…
+Story_Dial/Six/MeetCult3/1,Tris Acedi,ru,Курица или яйцо?
+Story_Dial/Six/MeetCult3/2,Guard (player),ru,Э… что за внезапные вбросы?
+Story_Dial/Six/MeetCult3/3,Tris Acedi,ru,Да так… извечный вопрос о причинно-следственной связи. О поиске начала.
+Story_Dial/Six/MeetCult3/4,Guard (player),ru,Да как-то плевать уже на начало. Хотелось бы уже всё закончить.
+Story_Dial/Six/MeetCult3/5,Tris Acedi,ru,"О, поверь, у тебя будет такая возможность. Или уже была…"
+Story_Dial/Six/MeetCult3/6,Guard (player),ru,Да пока как-то не особо. Кручусь как белка в колесе изо дня в день.
+Story_Dial/Six/MeetCult3/7,Tris Acedi,ru,"Крутись-крутись… Интересно, куда свернёшь."
+Story_Dial/Six/MeetCult3/8,Tris Acedi,ru,"Ладно, спать хочу, давай уже проверяй."
+Story_Dial/Six/ByeCult3/1,Tris Acedi,ru,Буду ждать за поворотом.
+Story_Dial/Six/MeetSata1/1,Tris Acedi,ru,Самый бессмысленный выбор в твоей жизни.
+Story_Dial/Six/MeetSata1/2,Guard (player),ru,"Да, спасибо, и без тебя проблем хватает."
+Story_Dial/Six/MeetSata1/3,Tris Acedi,ru,"Я не со зла, он правда бессмысленный."
+Story_Dial/Six/MeetSata1/4,Tris Acedi,ru,Знаешь… вспомнила вдруг свой прошлый дом. Как раз на пятом этаже жила.
+Story_Dial/Six/MeetSata1/5,Guard (player),ru,А чё не на шестом?
+Story_Dial/Six/MeetSata1/6,Tris Acedi,ru,"А на шестом фанатики поселились, к сожалению."
+Story_Dial/Six/MeetSata1/7,Guard (player),ru,"Оу… наверное, спокойно жить не давали?"
+Story_Dial/Six/MeetSata1/8,Tris Acedi,ru,"Скажем так, они постоянно громко что-то вопили."
+Story_Dial/Six/MeetSata1/9,Tris Acedi,ru,"Соседа настолько раздражали их крики, что он постоянно был в гневе."
+Story_Dial/Six/MeetSata1/10,Guard (player),ru,"Начинаю понимать, почему ты переехала…"
+Story_Dial/Six/MeetSata1/11,Tris Acedi,ru,Не начинаешь.
+Story_Dial/Six/MeetSata1/12,Tris Acedi,ru,Ох… даже воспоминания об этом меня утомили. Давай быстро со всем разберёмся.
+Story_Dial/Six/ByeSata1/1,Guard (player),ru,Ну сейчас то хоть тихо?
+Story_Dial/Six/ByeSata1/2,Tris Acedi,ru,Приемлемо.
+Story_Dial/Six/MeetSata2/1,Tris Acedi,ru,Как же мне тут не нравится. Слишком много воспоминаний…
+Story_Dial/Six/MeetSata2/2,Guard (player),ru,Утомляет?
+Story_Dial/Six/MeetSata2/3,Tris Acedi,ru,Утомляет.
+Story_Dial/Six/MeetSata2/4,Tris Acedi,ru,"А ведь тогда после переезда лучше не стало. Пришлось всемером жить вместе, ютиться."
+Story_Dial/Six/MeetSata2/5,Guard (player),ru,Так ты не одна живёшь?
+Story_Dial/Six/MeetSata2/6,Tris Acedi,ru,Уже одна. Соседи меня крайне утомили. Съехала от них.
+Story_Dial/Six/MeetSata2/7,Guard (player),ru,А они то что?
+Story_Dial/Six/MeetSata2/8,Tris Acedi,ru,"Да больно активны были, болтали без умолку… хотя один был молчаливым."
+Story_Dial/Six/MeetSata2/9,Tris Acedi,ru,"Он мне нравился больше всего. В отличие от другого, который никак общением насытиться не мог."
+Story_Dial/Six/MeetSata2/10,Tris Acedi,ru,А они чем дольше вместе живут – тем больше перенимаю черты друг друга…
+Story_Dial/Six/MeetSata2/11,Guard (player),ru,"Да, с жильём нынче тяжело. Но зато нашла себе место."
+Story_Dial/Six/MeetSata2/12,Tris Acedi,ru,"Я бы поспорила, но мне лень."
+Story_Dial/Six/MeetSata2/13,Tris Acedi,ru,Скорее проверку заканчивай.
+Story_Dial/Six/MeetMag1/1,Tris Acedi,ru,"Думаю, братья Гримм были бы в восторге."
+Story_Dial/Six/MeetMag1/2,Guard (player),ru,Очень смешно!
+Story_Dial/Six/MeetMag1/3,Tris Acedi,ru,"Знаешь, крайне бессмысленно оставлять порталы без присмотра."
+Story_Dial/Six/MeetMag1/4,Tris Acedi,ru,"Хотя нет, это всё же скорее безответственно."
+Story_Dial/Six/MeetMag1/5,Guard (player),ru,"Вот лично я его не закрыл, да?"
+Story_Dial/Six/MeetMag1/6,Tris Acedi,ru,"Ну лично ты его не закрыл, да."
+Story_Dial/Six/MeetMag1/7,Guard (player),ru,Но…
+Story_Dial/Six/MeetMag1/8,Tris Acedi,ru,"Да-да, но ты и не должен был, и даже не знал, как. И вообще ты просто охранник."
+Story_Dial/Six/MeetMag1/9,Guard (player),ru,"Вот именно. Не понимаю, почему его до сих пор не закрыли."
+Story_Dial/Six/MeetMag1/10,Tris Acedi,ru,"Запрет сверху. Точнее, снизу."
+Story_Dial/Six/MeetMag1/11,Guard (player),ru,Не понял…
+Story_Dial/Six/MeetMag1/12,Tris Acedi,ru,Да без разницы. Всё равно сам закрыть не сможешь.
+Story_Dial/Six/MeetMag1/13,Guard (player),ru,А ты сможешь?
+Story_Dial/Six/MeetMag1/14,Tris Acedi,ru,"Не знаю, мне лень пробовать. Давай уже проверяй."
+Story_Dial/Six/ByeMag1/1,Tris Acedi,ru,Сказочных снов.
+Story_Dial/Six/ByeMag1/2,Guard (player),ru,"Ага, тебе того же!"
+Story_Dial/Six/MeetMag2/1,Tris Acedi,ru,"Удивительно, насколько богато человеческое воображение, да?"
+Story_Dial/Six/MeetMag2/2,Guard (player),ru,Лучше б его не было.
+Story_Dial/Six/MeetMag2/3,Tris Acedi,ru,Ох… какая утомительная наивность. Смотри не накаркай.
+Story_Dial/Six/MeetMag2/4,Guard (player),ru,Да поздно каркать уже.
+Story_Dial/Six/MeetMag2/5,Tris Acedi,ru,"Или рано… никогда не знаешь, когда пора каркать."
+Story_Dial/Six/MeetMag2/6,Guard (player),ru,Чего?
+Story_Dial/Six/MeetMag2/7,Tris Acedi,ru,"Не суть. Знаешь, мой старый знакомый слюной бы подавился."
+Story_Dial/Six/MeetMag2/8,Guard (player),ru,"От того, что за ним охотится приведение? Или потому что его пытается сожрать сундук?"
+Story_Dial/Six/MeetMag2/9,Tris Acedi,ru,"Он… скажем так, учёный, коллекционер. Не знаю, знакомы вы уже или нет…"
+Story_Dial/Six/MeetMag2/10,Guard (player),ru,Он тоже тут работает?
+Story_Dial/Six/MeetMag2/11,Tris Acedi,ru,Да. Жадный до знаний. Для него это просто кладезь.
+Story_Dial/Six/MeetMag2/12,Tris Acedi,ru,Хотя… и этого ему будет мало.
+Story_Dial/Six/MeetMag2/13,Tris Acedi,ru,"Что-то я подустала, давай к делу."
+Story_Dial/Six/MeetTran1/1,Tris Acedi,ru,Слить воедино эзотерику и технологии… как же знакомо.
+Story_Dial/Six/MeetTran1/2,Guard (player),ru,Ты уже видела что-то подобное?
+Story_Dial/Six/MeetTran1/3,Tris Acedi,ru,Да. Это было крайне утомительно.
+Story_Dial/Six/MeetTran1/4,Guard (player),ru,"Ожидаемо. Есть вообще что-то, что тебя не утомляет?"
+Story_Dial/Six/MeetTran1/5,Tris Acedi,ru,"Нет. Всё же, если бы меня что-то не утомляло, я была бы не я."
+Story_Dial/Six/MeetTran1/6,Guard (player),ru,Если бы я не следовал инструкции…
+Story_Dial/Six/MeetTran1/7,Tris Acedi,ru,Ты бы здесь не работал. Это другое. Этот спор начинает меня утомлять.
+Story_Dial/Six/MeetTran1/8,Tris Acedi,ru,Не будем медлить.
+Story_Dial/Six/ByeTran1/1,Tris Acedi,ru,"Знаешь, а может я – уже не я. Ладно, до встречи."
+Story_Dial/Six/MeetTran2/1,Guard (player),ru,"Слушай, вот скажи, почему они просто не могли разобраться с этим червяком и спокойно жить дальше?"
+Story_Dial/Six/MeetTran2/2,Tris Acedi,ru,Высокомерие. В чём-то они напоминают мне одну знакомую.
+Story_Dial/Six/MeetTran2/3,Tris Acedi,ru,"Думает, что всё знает, что всех может наставлять."
+Story_Dial/Six/MeetTran2/4,Tris Acedi,ru,А за заботой лишь сложные фразы и раздутое самомнение.
+Story_Dial/Six/MeetTran2/5,Guard (player),ru,Кого-то мне это напоминает…
+Story_Dial/Six/MeetTran2/6,Tris Acedi,ru,"Ну надеюсь, не меня. Мне до неё далеко."
+Story_Dial/Six/MeetTran2/7,Tris Acedi,ru,А тебе близко.
+Story_Dial/Six/MeetTran2/8,Guard (player),ru,Я то чем на неё похож?
+Story_Dial/Six/MeetTran2/9,Tris Acedi,ru,"Я не это имела ввиду, скоро поймёшь, если ещё не понял."
+Story_Dial/Six/MeetTran2/10,Tris Acedi,ru,Устала я от вопросов.
+Story_Dial/Six/MeetZomb1/1,Tris Acedi,ru,"Отвратительная альтернатива. Заставить двигаться тех, кто уже не должен…"
+Story_Dial/Six/MeetZomb1/2,Guard (player),ru,"Это не я, это грибы!"
+Story_Dial/Six/MeetZomb1/3,Tris Acedi,ru,"Грибы штука странная. То мёртвых из могил поднимают, то верят во что ни попадя…"
+Story_Dial/Six/MeetZomb1/4,Guard (player),ru,"В пожирание мозгов, ага."
+Story_Dial/Six/MeetZomb1/5,Tris Acedi,ru,Здесь – да. И запах теперь отвратительный…
+Story_Dial/Six/MeetZomb1/6,Guard (player),ru,"Да я и сам не понимаю, зачем таких пускать можно иногда."
+Story_Dial/Six/MeetZomb1/7,Tris Acedi,ru,"Очевидно же, чтобы понять."
+Story_Dial/Six/MeetZomb1/8,Guard (player),ru,"Да надо не понимать, а упокоить."
+Story_Dial/Six/MeetZomb1/9,Tris Acedi,ru,Этим шансом ты уже не воспользовался. Да и он был бы бессмысленным.
+Story_Dial/Six/MeetZomb1/10,Guard (player),ru,Всё у тебя вечно бессмысленно…
+Story_Dial/Six/MeetZomb1/11,Tris Acedi,ru,"А смысл, если будет лишь один итог…"
+Story_Dial/Six/MeetZomb1/12,Guard (player),ru,"И этот итог будет спасением человечества! Хватит, и так голова от новой проблемы болит."
+Story_Dial/Six/ByeZomb1/1,Tris Acedi,ru,"И ведь ты даже не представляешь, как прав."
+Story_Dial/Six/MeetZomb2/1,Tris Acedi,ru,А вонь всё сильнее…
+Story_Dial/Six/MeetZomb2/2,Guard (player),ru,"Да, унынием пахнет."
+Story_Dial/Six/MeetZomb2/3,Tris Acedi,ru,"Я бы могла обидеться, но мне лень."
+Story_Dial/Six/MeetZomb2/4,Guard (player),ru,"Прям настолько? Серьёзно, сходи к психиатру."
+Story_Dial/Six/MeetZomb2/5,Tris Acedi,ru,Бессмысленно. Он ничего не исправит. Как и…
+Story_Dial/Six/MeetZomb2/6,Guard (player),ru,Я тебя исправлять не собираюсь. А с мертвяками разберусь и без тебя.
+Story_Dial/Six/MeetZomb2/7,Tris Acedi,ru,Тогда я пойду?
+Story_Dial/Six/MeetZomb2/8,Guard (player),ru,Разбежалась… сначала проверка.
+Story_Dial/Six/MeetZomb2/9,Tris Acedi,ru,Ох…
+Story_Dial/Six/ByeZomb2/1,Guard (player),ru,"Всё, иди."
+Story_Dial/Six/MeetZomb3/1,Tris Acedi,ru,"Знал бы ты, какой аромат там снизу…"
+Story_Dial/Six/MeetZomb3/2,Guard (player),ru,Могу представить. От изолятора тоже прекрасный букет исходит.
+Story_Dial/Six/MeetZomb3/3,Guard (player),ru,"Снова пришла говорить, что всё бессмысленно, и я впустую трачу время?"
+Story_Dial/Six/MeetZomb3/4,Tris Acedi,ru,"Смысл есть, просто он не твой. А где-то и правда смысла уже нет."
+Story_Dial/Six/MeetZomb3/5,Guard (player),ru,"Да, смысл человечества. Не хочу, чтоб Земля стала одним большим ходячим могильником."
+Story_Dial/Six/MeetZomb3/6,Tris Acedi,ru,"Она уже становилась, и не раз. Всё зависит от тебя."
+Story_Dial/Six/MeetZomb3/7,Guard (player),ru,То есть моя работа не бессмысленна всё же?
+Story_Dial/Six/MeetZomb3/8,Tris Acedi,ru,Для меня – бессмысленна. Для тебя – сам решай.
+Story_Dial/Six/MeetZomb3/9,Guard (player),ru,"Ну вот я сейчас и решу, после проверки."
+Story_Dial/Six/ByeZomb3/1,Guard (player),ru,"И заметь, это я так решил."
+Story_Dial/Six/MeetPsy1/1,Tris Acedi,ru,Довели город до какой-то разрухи… Ещё и в людей мусора напихали…
+Story_Dial/Six/MeetPsy1/2,Guard (player),ru,"Что было, то и напихали!"
+Story_Dial/Six/MeetPsy1/3,Tris Acedi,ru,И так каждый раз… Ничего не меняется.
+Story_Dial/Six/MeetPsy1/4,Guard (player),ru,Ну зомби теперь не разгуливают…
+Story_Dial/Six/MeetPsy1/5,Tris Acedi,ru,И запах сменился на продукты жизнедеятельности и сожжённую плоть…
+Story_Dial/Six/MeetPsy1/6,Tris Acedi,ru,Когда пытаешься решить всё впопыхах подручными средствами – вечно что-то идёт не так.
+Story_Dial/Six/MeetPsy1/7,Guard (player),ru,"Ты б так советы раздавала, когда они значение имеют."
+Story_Dial/Six/MeetPsy1/8,Tris Acedi,ru,Советую доводить дело до конца. И не один раз.
+Story_Dial/Six/MeetPsy1/9,Guard (player),ru,Опять странности говоришь… Госпожа загадочность.
+Story_Dial/Six/MeetPsy1/10,Tris Acedi,ru,Просто лень разъяснять. Давай уже.
+Story_Dial/Six/ByePsy1/1,Tris Acedi,ru,Ох… теперь надо до лифта дойти…
+Story_Dial/Six/MeetPsy2/1,Tris Acedi,ru,Совсем с ума сходят от безделья…
+Story_Dial/Six/MeetPsy2/2,Guard (player),ru,"Ну да, им бы у тебя поучиться ничего не делать, и при этом не сходить с ума."
+Story_Dial/Six/MeetPsy2/3,Tris Acedi,ru,"Как я, ещё никто не смог научиться. У меня это врождённый талант."
+Story_Dial/Six/MeetPsy2/4,Guard (player),ru,"Боже… ты всегда была такой что ли? Прости, я не знал…"
+Story_Dial/Six/MeetPsy2/5,Tris Acedi,ru,Не всегда. Точнее… никогда не видела смысла в чём-либо.
+Story_Dial/Six/MeetPsy2/6,Tris Acedi,ru,Но когда Восьмая перестала существовать… без неё стало… печально.
+Story_Dial/Six/MeetPsy2/7,Guard (player),ru,Вы… вы были так близки?
+Story_Dial/Six/MeetPsy2/8,Tris Acedi,ru,"Ближе, чем ты думаешь. Теперь она во мне."
+Story_Dial/Six/MeetPsy2/9,Guard (player),ru,"Хранить в своём сердце память об ушедших… я теперь понимаю, что на тебя так повлияло."
+Story_Dial/Six/MeetPsy2/10,Tris Acedi,ru,"Если бы… Впрочем, ты меня утомил."
+Story_Dial/Six/MeetPsy2/11,Guard (player),ru,"Понимаю, не стоило мне в это лезть."
+Story_Dial/Six/MeetPsy2/12,Guard (player),ru,Но если вдруг захочешь поговорить…
+Story_Dial/Six/MeetPsy2/13,Tris Acedi,ru,"Захочу, но не про это."
+Story_Dial/Six/MeetChip1/1,Tris Acedi,ru,Решил пойти по самому страшному пути?
+Story_Dial/Six/MeetChip1/2,Guard (player),ru,"Да я даже представить не могу, что монетизация может быть такой…"
+Story_Dial/Six/MeetChip1/3,Tris Acedi,ru,"Налоги теперь кажутся не такой уж и тягостью, не правда ли?"
+Story_Dial/Six/MeetChip1/4,Guard (player),ru,Да ужас какой-то!
+Story_Dial/Six/MeetChip1/5,Guard (player),ru,"Подписка на время, воздух, пульс… Спасибо, что на моргания подписки нет!"
+Story_Dial/Six/MeetChip1/6,Tris Acedi,ru,"Ну ты давай, больше идей им подкидывай…"
+Story_Dial/Six/MeetChip1/7,Guard (player),ru,Ой… тоже верно.
+Story_Dial/Six/MeetChip1/8,Tris Acedi,ru,А чего ты так распереживался? Ты ж вроде чистый.
+Story_Dial/Six/MeetChip1/9,Guard (player),ru,"Ну у меня то этих чипов в теле нет, но другие то страдают…"
+Story_Dial/Six/MeetChip1/10,Tris Acedi,ru,Переживать за других так утомительно… От одной мысли утомилась.
+Story_Dial/Six/ByeChip1/1,Tris Acedi,ru,"Хорошо, что на бессмысленность лимит ввести не смогут, ведь это бессмысленно."
+Story_Dial/Six/MeetChip2/1,Tris Acedi,ru,"Ну что, не истратил ещё свой лимит на талоны?"
+Story_Dial/Six/MeetChip2/2,Guard (player),ru,У меня тут запас на века! За талоны готов сражаться!
+Story_Dial/Six/MeetChip2/3,Tris Acedi,ru,Было бы чем… Да и сражаться – такая морока…
+Story_Dial/Six/MeetChip2/4,Guard (player),ru,Это да… могу только дубинкой отметелить…
+Story_Dial/Six/MeetChip2/5,Tris Acedi,ru,"Удивительно, что ты всё это пережил лишь с одной дубинкой на поясе…"
+Story_Dial/Six/MeetChip2/6,Tris Acedi,ru,Хотя нет… неудивительно.
+Story_Dial/Six/MeetChip2/7,Guard (player),ru,Это такой странный комплимент?
+Story_Dial/Six/MeetChip2/8,Tris Acedi,ru,Это банальный факт. Комплименты требуют слишком много усилий.
+Story_Dial/Six/MeetChip2/9,Tris Acedi,ru,"Вот есть одна знакомая, она бы с радостью воспользовалась бы этими чипами."
+Story_Dial/Six/MeetChip2/10,Guard (player),ru,Такая себе знакомая…
+Story_Dial/Six/MeetChip2/11,Tris Acedi,ru,Ну какая есть. Просто обожает обладать чужими чувствами.
+Story_Dial/Six/MeetChip2/12,Tris Acedi,ru,"Чтобы её хотели, желали, думали только о ней… всё в этом духе."
+Story_Dial/Six/MeetChip2/13,Guard (player),ru,Мда… тебе срочно надо менять окружение.
+Story_Dial/Six/MeetChip2/14,Tris Acedi,ru,"Я уже поменяла. Ладно, давай уже к проверке перейдём."
+Story_Dial/Six/MeetInsect1/1,Tris Acedi,ru,"И вот всё пришло к тараканам, которых бессмысленно бить тапком."
+Story_Dial/Six/MeetInsect1/2,Guard (player),ru,Ну… изначально они выглядели как…
+Story_Dial/Six/MeetInsect1/3,Tris Acedi,ru,Как лекарство? Как откат тела во времени?
+Story_Dial/Six/MeetInsect1/4,Tris Acedi,ru,"Хотя нет, путешествовать во времени невозможно. Забудь."
+Story_Dial/Six/MeetInsect1/5,Guard (player),ru,Но они же жрали только гнилое…
+Story_Dial/Six/MeetInsect1/6,Tris Acedi,ru,А предки людей под водой дышали.
+Story_Dial/Six/MeetInsect1/7,Tris Acedi,ru,"Как видишь, теперь ты можешь разве что захлебнуться, а тараканы могут жрать свежатину."
+Story_Dial/Six/MeetInsect1/8,Tris Acedi,ru,Как же утомляет это всё объяснять…
+Story_Dial/Six/MeetInsect1/9,Guard (player),ru,"Ну извини, я не учёный…"
+Story_Dial/Six/MeetInsect1/10,Tris Acedi,ru,Я тоже. Давай перейдём к проверке.
+Story_Dial/Six/ByeInsect1/1,Tris Acedi,ru,"Смотри, не угоди в пасть. Быть просто пережёванным – это слишком бессмысленно."
+Story_Dial/Six/MeetInsect2/1,Guard (player),ru,"Ты вот мне объясни, как можно быть настолько голодными…"
+Story_Dial/Six/MeetInsect2/2,Tris Acedi,ru,Ты об этом меня спрашиваешь? Ох…
+Story_Dial/Six/MeetInsect2/3,Tris Acedi,ru,Лучше спроси одного моего знакомого. Болтает без умолку.
+Story_Dial/Six/MeetInsect2/4,Guard (player),ru,Многое рассказывает?
+Story_Dial/Six/MeetInsect2/5,Tris Acedi,ru,"Нет, он просто не может насытиться общением. Никогда."
+Story_Dial/Six/MeetInsect2/6,Tris Acedi,ru,"Выстраивает отношения на равных, притворяется другом, лишь бы поболтать побольше."
+Story_Dial/Six/MeetInsect2/7,Guard (player),ru,Я б такого друга не хотел…
+Story_Dial/Six/MeetInsect2/8,Tris Acedi,ru,Он обычно и не спрашивает твоего желания.
+Story_Dial/Six/MeetInsect2/9,Tris Acedi,ru,Просто жрёт общение.
+Story_Dial/Six/MeetInsect2/10,Tris Acedi,ru,От одного лишь воспоминания утомилась. Ох…
+Story_Dial/Six/Deni/1,Guard (player),ru,Иди-ка ты отдохни.
+Story_Dial/Six/Deni/2,Tris Acedi,ru,Зачем приходила…
+Story_Dial/Six/Kill/1,Tris Acedi,ru,Бессмысленно…
+Story_Dial/Six/HiAfterDeath1/1,Guard (player),ru,Ты… ты же мертва…
+Story_Dial/Six/HiAfterDeath1/2,Tris Acedi,ru,"Не, мне лень умирать."
+Story_Dial/Six/HiAfterDeath1/3,Guard (player),ru,Какого…
+Story_Dial/Six/HiAfterDeath1/4,Tris Acedi,ru,Ты этого не изменишь.
+Story_Dial/Six/HiAfterDeath2/1,Tris Acedi,ru,"Я же говорила, бессмысленно… сколько ни пытайся"
+Story_Dial/Six/HiAfterDeath2/2,Guard (player),ru,Да что ж такое… Ладно…
+Story_Dial/Six/HiAfterDeath3/1,Tris Acedi,ru,"Знаешь, что такое безумие?"
+Story_Dial/Six/HiAfterDeath3/2,Guard (player),ru,"Всё то, что здесь происходит?"
+Story_Dial/Six/HiAfterDeath3/3,Tris Acedi,ru,Ну… сложно поспорить…
+Story_Dial/Six/HiAfterDeath4/1,Tris Acedi,ru,"Я полагаю, бессмысленно просить тебя прекратить так делать?"
+Story_Dial/Six/HiAfterDeath4/2,Guard (player),ru,Я подумаю.
+Story_Dial/Six/HiAfterDeath5/1,Tris Acedi,ru,Так себе ты подумал…
+Story_Dial/Six/HiAfterDeath5/2,Guard (player),ru,Как умею…
+Story_Dial/Six/HiAfterDeath6/1,Tris Acedi,ru,Тебе просто нравится? Во вкус вошёл?
+Story_Dial/Six/HiAfterDeath6/2,Guard (player),ru,"Думаю, ответ… бессмысленный. Ха!"
+Story_Dial/Six/HiAfterDeath7/1,Tris Acedi,ru,Наконец-то это закончится.
+Story_Dial/Six/HiAfterDeath7/2,Guard (player),ru,Что закончится?
+Story_Dial/Six/HiAfterDeath7/3,Tris Acedi,ru,Узнаешь.

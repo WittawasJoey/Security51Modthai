@@ -1,0 +1,126 @@
+{
+  "source_rows": 5476,
+  "unique_source_keys": 4954,
+  "nonempty_source_keys": 3484,
+  "excluded_unique_keys": 187,
+  "eligible_nonempty_keys": 3457,
+  "translated_unique_keys": 3457,
+  "coverage_percent_of_nonempty_keys": 99.23,
+  "coverage_percent_of_eligible_keys": 100.0,
+  "statuses_by_row": {
+    "draft": 3457,
+    "excluded": 187,
+    "untranslated": 1832
+  },
+  "categories": {
+    "Abstract_Dev": {
+      "rows": 90,
+      "translated_rows": 11,
+      "coverage_percent": 12.22
+    },
+    "CityOperations": {
+      "rows": 288,
+      "excluded_rows": 1,
+      "translated_rows": 287,
+      "coverage_percent": 99.65
+    },
+    "CoordinatorReplics": {
+      "rows": 339,
+      "translated_rows": 332,
+      "excluded_rows": 7,
+      "coverage_percent": 97.94
+    },
+    "Credits": {
+      "rows": 4,
+      "translated_rows": 2,
+      "excluded_rows": 1,
+      "coverage_percent": 50.0
+    },
+    "DM_Ends": {
+      "rows": 516,
+      "excluded_rows": 1,
+      "translated_rows": 515,
+      "coverage_percent": 99.81
+    },
+    "Dialogue": {
+      "rows": 121,
+      "translated_rows": 121,
+      "coverage_percent": 100.0
+    },
+    "Doc_Loc": {
+      "rows": 351,
+      "translated_rows": 343,
+      "excluded_rows": 1,
+      "coverage_percent": 97.72
+    },
+    "Events_For_Stats": {
+      "rows": 21,
+      "translated_rows": 20,
+      "coverage_percent": 95.24
+    },
+    "Hints": {
+      "rows": 196,
+      "translated_rows": 175,
+      "excluded_rows": 21,
+      "coverage_percent": 89.29
+    },
+    "Instructions": {
+      "rows": 1021,
+      "translated_rows": 242,
+      "excluded_rows": 123,
+      "coverage_percent": 23.7
+    },
+    "IsolatorExperiments": {
+      "rows": 21,
+      "translated_rows": 20,
+      "coverage_percent": 95.24
+    },
+    "Journal": {
+      "rows": 14,
+      "translated_rows": 14,
+      "coverage_percent": 100.0
+    },
+    "NewsAndReports": {
+      "rows": 136,
+      "translated_rows": 133,
+      "excluded_rows": 2,
+      "coverage_percent": 97.79
+    },
+    "Real_Dev": {
+      "rows": 1000,
+      "translated_rows": 455,
+      "excluded_rows": 1,
+      "coverage_percent": 45.5
+    },
+    "Rorschach": {
+      "rows": 135,
+      "translated_rows": 133,
+      "coverage_percent": 98.52
+    },
+    "Shop": {
+      "rows": 63,
+      "translated_rows": 62,
+      "excluded_rows": 1,
+      "coverage_percent": 98.41
+    },
+    "Story_Dial": {
+      "rows": 387,
+      "translated_rows": 386,
+      "coverage_percent": 99.74
+    },
+    "Tech_devv": {
+      "rows": 3,
+      "coverage_percent": 0.0
+    },
+    "UI": {
+      "rows": 236,
+      "translated_rows": 206,
+      "excluded_rows": 28,
+      "coverage_percent": 87.29
+    },
+    "Правила ": {
+      "rows": 534,
+      "coverage_percent": 0.0
+    }
+  }
+}

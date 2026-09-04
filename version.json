@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "modVersion": "0.1.1",
+  "releaseChannel": "beta",
+  "translationRevision": 2,
+  "supportedGameBuilds": [
+    {
+      "appId": "4246860",
+      "buildId": "25104142",
+      "executable": "Security51.exe",
+      "executableSha256": "4bf42785b5b1de056862bc0b5529521120df9f0748ede4861fa74119ce6eba08",
+      "unityVersion": "6000.3.8f1",
+      "il2cppMetadataVersion": 39,
+      "status": "supported"
+    }
+  ]
+}

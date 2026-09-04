@@ -1,0 +1,195 @@
+﻿{
+    "schemaVersion":  1,
+    "generatedAtUtc":  "2026-08-30T07:09:31.7876402Z",
+    "game":  {
+                 "name":  "Security 51",
+                 "appId":  "4246860",
+                 "buildId":  "24972648",
+                 "unityVersion":  "6000.3.8f1",
+                 "backend":  "IL2CPP",
+                 "root":  "D:\\SteamLibrary\\steamapps\\common\\Security 51"
+             },
+    "coreFiles":  [
+                      {
+                          "path":  "Security51.exe",
+                          "size":  667648,
+                          "sha256":  "4bf42785b5b1de056862bc0b5529521120df9f0748ede4861fa74119ce6eba08",
+                          "lastWriteTimeUtc":  "2026-08-27T13:41:07.0444174Z"
+                      },
+                      {
+                          "path":  "UnityPlayer.dll",
+                          "size":  35734960,
+                          "sha256":  "d935627d3ac843293f1c51ee9d85538191f0cb98def4271c1a29302b52a021d4",
+                          "lastWriteTimeUtc":  "2026-08-27T13:41:07.0584424Z"
+                      },
+                      {
+                          "path":  "GameAssembly.dll",
+                          "size":  89674240,
+                          "sha256":  "a4d1f500613aa6231a71f3995796349c1f061d911dcc24286a12da455b87c517",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.2930714Z"
+                      },
+                      {
+                          "path":  "Security51_Data/globalgamemanagers",
+                          "size":  829348,
+                          "sha256":  "a2db8c224e407aee62f78594b6bb9f210d927a034b1d5ab8d4737ddc1dfb1cf5",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.2930714Z"
+                      },
+                      {
+                          "path":  "Security51_Data/globalgamemanagers.assets",
+                          "size":  2273204,
+                          "sha256":  "7dd4d5d76995a0a0694d220f79d7831ea40d8928dfd3755d4baf1d5062dd7408",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.2942008Z"
+                      },
+                      {
+                          "path":  "Security51_Data/resources.assets",
+                          "size":  86643720,
+                          "sha256":  "4623f6728bfe6468d33177721868ee6df6d7a81a93a2acbb002a06bbe5ab2981",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.2973045Z"
+                      },
+                      {
+                          "path":  "Security51_Data/sharedassets0.assets",
+                          "size":  21092,
+                          "sha256":  "be07a4fa913aebe8b6bd457a0533b09ebe8c941442bc149a5d6823f5c9abf7f6",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.9976996Z"
+                      },
+                      {
+                          "path":  "Security51_Data/sharedassets1.assets",
+                          "size":  221284,
+                          "sha256":  "8d9a8c5dd5f20c9cc6135a3b271b4a305bfd86042b28ee1ab8902b572b1537cd",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.9761471Z"
+                      },
+                      {
+                          "path":  "Security51_Data/sharedassets2.assets",
+                          "size":  8808,
+                          "sha256":  "0b1a58ea97ba6873b0efe4f66e707571e659bdba71bd0c5c83dfef04a60f6a90",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.9273245Z"
+                      },
+                      {
+                          "path":  "Security51_Data/sharedassets3.assets",
+                          "size":  21792,
+                          "sha256":  "f793b043b98806f8dc70853eac70f3b6a5314649a57713d734d79d28c0940dff",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.9761471Z"
+                      },
+                      {
+                          "path":  "Security51_Data/sharedassets4.assets",
+                          "size":  1229504,
+                          "sha256":  "c69d18050b13d6d97831c20d2f8a66b0277148bea32f9ff5bfc6e5cc79965bb3",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.2983325Z"
+                      },
+                      {
+                          "path":  "Security51_Data/sharedassets5.assets",
+                          "size":  15140636,
+                          "sha256":  "7ea115551069fac3c0114ef655a72b280e553917183247f5e590fa484d62502f",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.2993294Z"
+                      },
+                      {
+                          "path":  "Security51_Data/il2cpp_data/Metadata/global-metadata.dat",
+                          "size":  18858592,
+                          "sha256":  "569ee2600667eadd6b79965ee3535b721c1ea93cbd6d30a6691481f65f7ac663",
+                          "lastWriteTimeUtc":  "2026-08-27T17:19:08.2952052Z"
+                      }
+                  ],
+    "knownModArtifacts":  [
+                              {
+                                  "path":  ".doorstop_version",
+                                  "type":  "file",
+                                  "size":  5
+                              },
+                              {
+                                  "path":  "BepInEx",
+                                  "type":  "directory",
+                                  "size":  null
+                              },
+                              {
+                                  "path":  "AutoTranslator",
+                                  "type":  "directory",
+                                  "size":  null
+                              },
+                              {
+                                  "path":  "Security51_Data_ThaiMod",
+                                  "type":  "directory",
+                                  "size":  null
+                              },
+                              {
+                                  "path":  "Security51_Thai_Mod_Pack",
+                                  "type":  "directory",
+                                  "size":  null
+                              },
+                              {
+                                  "path":  "Install_Thai_Mod.bat",
+                                  "type":  "file",
+                                  "size":  1377
+                              },
+                              {
+                                  "path":  "Uninstall_Thai_Mod.bat",
+                                  "type":  "file",
+                                  "size":  530
+                              },
+                              {
+                                  "path":  "README.md",
+                                  "type":  "file",
+                                  "size":  3817
+                              },
+                              {
+                                  "path":  "Security51_Data/StreamingAssets/I2Languages.csv",
+                                  "type":  "file",
+                                  "size":  104482
+                              },
+                              {
+                                  "path":  "Security51_Data/StreamingAssets/I2Languages.txt",
+                                  "type":  "file",
+                                  "size":  104482
+                              },
+                              {
+                                  "path":  "Security51_Data/StreamingAssets/LanguageSource.csv",
+                                  "type":  "file",
+                                  "size":  104482
+                              }
+                          ],
+    "backupFiles":  [
+                        {
+                            "path":  "Security51_Data/globalgamemanagers.assets.bak",
+                            "size":  2254420,
+                            "sha256":  "4070207f5d3deae6b3b0abd7e91ea7c60662ee5b2823e1bc18dccd72660ef3e1"
+                        },
+                        {
+                            "path":  "Security51_Data/resources.assets.bak",
+                            "size":  86256568,
+                            "sha256":  "11c38ee3226a8f98ca1fc86586a840c21ec559e3dac37a14679e0bd752adefa9"
+                        },
+                        {
+                            "path":  "Security51_Data/sharedassets0.assets.bak",
+                            "size":  21092,
+                            "sha256":  "d0e7540e97c2158f5df37f1775a766c6b5e86b7b0c4b4b3af9c56fa52557bfd2"
+                        },
+                        {
+                            "path":  "Security51_Data/sharedassets1.assets.bak",
+                            "size":  221284,
+                            "sha256":  "918b8bdb96e9366e8aa1711729292e0f09563d32c2d928f37e57179483d223f8"
+                        },
+                        {
+                            "path":  "Security51_Data/sharedassets2.assets.bak",
+                            "size":  8808,
+                            "sha256":  "6cda5f28e429bdb4aff0f7d4bf6f93aa232bf31d3c96c176536db45a75237779"
+                        },
+                        {
+                            "path":  "Security51_Data/sharedassets3.assets.bak",
+                            "size":  21792,
+                            "sha256":  "ce16e98618a8db71e6042983e03d4a1055a4044d16fdd6eb71a99fad91cfad1c"
+                        },
+                        {
+                            "path":  "Security51_Data/sharedassets4.assets.bak",
+                            "size":  1065108,
+                            "sha256":  "c0b02b41abbb924571f7c039ad667d8a65b5891f39a627c820694302ddc71581"
+                        },
+                        {
+                            "path":  "Security51_Data/sharedassets5.assets.bak",
+                            "size":  13769004,
+                            "sha256":  "ec18741157373c55a6d175f0d8ecb5f5b13e0e6b4ef8f9493714ce28e733518b"
+                        }
+                    ],
+    "notes":  [
+                  "Steam Verify repairs official files but does not remove unknown extra files.",
+                  "Presence in knownModArtifacts does not by itself mean that an artifact is currently loaded."
+              ]
+}

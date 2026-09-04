@@ -1,0 +1,27 @@
+source,target,part_of_speech,context,status,notes
+Area 51,แอเรีย 51,proper_noun,สถานที่,approved,คงชื่อที่รู้จักทั่วไป
+pass,บัตรผ่าน,noun,เอกสารที่ใช้ผ่านจุดตรวจ,approved,อย่าสับสนกับกริยาให้ผ่าน
+checkpoint,จุดตรวจ,noun,สถานที่ตรวจบุคคลหรือเอกสาร,approved,
+security guard,เจ้าหน้าที่รักษาความปลอดภัย,noun,ตำแหน่งบุคคล,approved,ใช้คำว่า รปภ. เฉพาะพื้นที่แคบและผ่าน QA แล้ว
+document,เอกสาร,noun,เอกสารทั่วไป,approved,
+ID,บัตรประจำตัว,noun,เอกสารระบุตัวบุคคล,approved,คง ID หากอยู่ในชื่อ field ที่พื้นที่แคบ
+anomaly,สิ่งผิดปกติ,noun,ปรากฏการณ์หรือวัตถุผิดปกติ,provisional,ตรวจบริบทก่อนใช้กับสิ่งมีชีวิต
+alien,มนุษย์ต่างดาว,noun,สิ่งมีชีวิตนอกโลก,provisional,
+experiment,การทดลอง,noun,ระบบและเอกสาร,approved,
+quarantine,กักกัน,noun,มาตรการควบคุม,approved,
+isolator,ห้องแยกกัก,noun,สถานที่หรือระบบในเกม,provisional,ตรวจภาพและเนื้อเรื่องก่อนล็อกศัพท์
+coordinator,ผู้ประสานงาน,noun,ตำแหน่งบุคคล,provisional,ตรวจชื่อเรียกในเนื้อเรื่อง
+Continue,ดำเนินการต่อ,verb,ปุ่ม UI,approved,
+Settings,ตั้งค่า,noun,เมนู UI,approved,
+Controls,การควบคุม,noun,เมนูตั้งค่าปุ่ม,approved,
+Apply,นำไปใช้,verb,ปุ่ม UI,approved,
+Back,ย้อนกลับ,verb,ปุ่ม UI,approved,
+Quit Game,ออกจากเกม,verb,ปุ่ม UI,approved,
+Main Menu,เมนูหลัก,noun,UI,approved,
+Fullscreen,เต็มหน้าจอ,adjective,โหมดหน้าต่าง,approved,
+Windowed,หน้าต่าง,adjective,โหมดหน้าต่าง,approved,
+Borderless,ไร้ขอบ,adjective,โหมดหน้าต่าง,approved,
+Resolution,ความละเอียด,noun,การตั้งค่าภาพ,approved,
+Sound FX volume,ระดับเสียงเอฟเฟกต์,noun,การตั้งค่าเสียง,approved,
+Music volume,ระดับเสียงเพลง,noun,การตั้งค่าเสียง,approved,
+Day {0},วันที่ {0},noun,UI รอบการเล่น,approved,รักษา {0}

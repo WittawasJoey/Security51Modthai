@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "source": "source\\I2Languages.25104142.asset.json",
+  "sourceSha256": "97035cb2b20e08aa398cf958178f51c5a17e96e64f4b7b6a1b08198c7c4e31b9",
+  "assetName": "I2Languages",
+  "languageCount": 13,
+  "languages": [
+    {
+      "Name": "Key",
+      "Code": "",
+      "Flags": 1
+    },
+    {
+      "Name": "Description",
+      "Code": "",
+      "Flags": 1
+    },
+    {
+      "Name": "English",
+      "Code": "en",
+      "Flags": 0
+    },
+    {
+      "Name": "Russian",
+      "Code": "ru",
+      "Flags": 0
+    },
+    {
+      "Name": "Chinese (Simplified)",
+      "Code": "zh-CN",
+      "Flags": 0
+    },
+    {
+      "Name": "French",
+      "Code": "fr",
+      "Flags": 0
+    },
+    {
+      "Name": "German",
+      "Code": "de",
+      "Flags": 0
+    },
+    {
+      "Name": "Spanish",
+      "Code": "es",
+      "Flags": 0
+    },
+    {
+      "Name": "Brazil",
+      "Code": "pt-BR",
+      "Flags": 0
+    },
+    {
+      "Name": "Chinese (Traditional)",
+      "Code": "zh-TW",
+      "Flags": 0
+    },
+    {
+      "Name": "Korean",
+      "Code": "ko",
+      "Flags": 1
+    },
+    {
+      "Name": "Polish",
+      "Code": "pl",
+      "Flags": 0
+    },
+    {
+      "Name": "Japanese",
+      "Code": "ja",
+      "Flags": 0
+    }
+  ],
+  "termCount": 5476,
+  "uniqueKeyCount": 4954,
+  "duplicateKeyCount": 3,
+  "duplicates": [
+    {
+      "key": "Правила /Для Китайского и Корейского фонетическая транслитерация иероглифами.",
+      "count": 175
+    },
+    {
+      "key": "Правила /Для Японского транслитерация катаканой",
+      "count": 175
+    },
+    {
+      "key": "Правила /Если в названии есть общипринятые термины типа Восточная, Западная, Европа, Америка и тд - Неоригинальную часть переводить, остальную транслитерировать с легкой шлифовкой по необходимости.",
+      "count": 175
+    }
+  ],
+  "missingEnglishCount": 1936,
+  "entriesWithPlaceholders": 22,
+  "entriesWithRichTextTags": 0,
+  "categoryCounts": {
+    "Instructions": 1021,
+    "Real_Dev": 1000,
+    "Правила ": 534,
+    "DM_Ends": 516,
+    "Story_Dial": 387,
+    "Doc_Loc": 351,
+    "CoordinatorReplics": 339,
+    "CityOperations": 288,
+    "UI": 236,
+    "Hints": 196,
+    "NewsAndReports": 136,
+    "Rorschach": 135,
+    "Dialogue": 121,
+    "Abstract_Dev": 90,
+    "Shop": 63,
+    "IsolatorExperiments": 21,
+    "Events_For_Stats": 21,
+    "Journal": 14,
+    "Credits": 4,
+    "Tech_devv": 3
+  }
+}

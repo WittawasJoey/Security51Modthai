@@ -1,0 +1,19 @@
+{
+  "UI/ButtonContinue": "ดำเนินการต่อ",
+  "UI/ButtonNo": "ไม่",
+  "UI/ButtonOk": "ตกลง",
+  "UI/ButtonOkay": "ตกลง",
+  "UI/ButtonQuit": "ออกจากเกม",
+  "UI/ButtonYes": "ใช่",
+  "UI/BuyButton": "ซื้อ",
+  "UI/ButtonBinding": "การควบคุม",
+  "UI/ConfirmQuitText": "คุณแน่ใจหรือไม่ว่าต้องการออกจากเกม?",
+  "UI/ExitButton": "ออกจากเกม",
+  "UI/HintSkip": "ข้าม",
+  "UI/HintSkipAll": "ข้ามทั้งหมด",
+  "UI/PressAnyKey": "กดปุ่มใดก็ได้",
+  "UI/OptTimer": "การตั้งค่าจะมีผลใน {0}",
+  "UI/ButtonInfinity": "โหมดไร้สิ้นสุด",
+  "UI/EndModeWarning": "โหมดสำหรับผู้เล่นที่มีประสบการณ์ ไม่มีบทฝึกสอน"
+}
+
