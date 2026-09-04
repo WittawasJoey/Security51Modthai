@@ -15,7 +15,7 @@ public sealed class Plugin : BasePlugin
 {
     public const string PluginGuid = "th.security51.localization";
     public const string PluginName = "Security 51 Thai Mod";
-    public const string PluginVersion = "0.1.1";
+    public const string PluginVersion = "0.1.2";
 
     private Harmony _harmony;
 

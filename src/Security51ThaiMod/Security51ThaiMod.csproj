@@ -6,7 +6,7 @@
     <LangVersion>10.0</LangVersion>
     <AssemblyName>Security51ThaiMod</AssemblyName>
     <RootNamespace>Security51ThaiMod</RootNamespace>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <GameRoot Condition="'$(GameRoot)' == ''">D:\SteamLibrary\steamapps\common\Security 51</GameRoot>
     <BepInExCore>$(GameRoot)\BepInEx\core</BepInExCore>
     <InteropDir>$(GameRoot)\BepInEx\interop</InteropDir>

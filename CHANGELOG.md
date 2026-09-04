@@ -2,6 +2,16 @@
 
 รูปแบบเวอร์ชันม็อดใช้ Semantic Versioning (`major.minor.patch`) และระบุ Steam build ที่รองรับแยกต่างหากเสมอ
 
+## 0.1.2-beta — 4 กันยายน 2026
+
+รองรับ Security 51 Steam build `25104142`
+
+- เพิ่ม `Install-SingleClick.cmd` สำหรับติดตั้งด้วยการดับเบิลคลิก
+- ค้นหา Security 51 จาก Steam registry และ `libraryfolders.vdf` อัตโนมัติ
+- อัปเดตม็อดรุ่นเก่าโดยใช้ uninstaller/install record เดิมอย่างปลอดภัย
+- ยังคงตรวจ Steam build, executable hash, BepInEx และ payload checksum ก่อนติดตั้ง
+- รองรับ `-GamePath` เมื่อพบเกมหลายชุดหรือติดตั้งในตำแหน่งพิเศษ
+
 ## 0.1.1-beta — 4 กันยายน 2026
 
 รองรับ Security 51 Steam build `25104142`

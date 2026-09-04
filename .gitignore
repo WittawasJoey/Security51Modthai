@@ -2,7 +2,7 @@
 backups/
 build/*
 !build/.gitkeep
-reports/AssetRipper.log
+reports/AssetRipper*.log
 reports/*.png
 reports/*.jpg
 reports/*.jpeg
