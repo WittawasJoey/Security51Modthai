@@ -1,0 +1,47 @@
+﻿{
+    "schemaVersion":  1,
+    "modVersion":  "0.1.3",
+    "generatedAtUtc":  "2026-09-06T12:41:47.7329501Z",
+    "game":  {
+                 "appId":  "4246860",
+                 "buildId":  "25104142",
+                 "executable":  "Security51.exe",
+                 "executableSha256":  "4bf42785b5b1de056862bc0b5529521120df9f0748ede4861fa74119ce6eba08"
+             },
+    "prerequisite":  {
+                         "name":  "BepInEx Unity IL2CPP x64",
+                         "version":  "6.0.0-be.785+6abdba4",
+                         "files":  [
+                                       {
+                                           "path":  "BepInEx/core/BepInEx.Core.dll",
+                                           "sha256":  "352aacc2d5356489a00891f76db28b6463c81d25bcb02f90035171a669b7e35b"
+                                       },
+                                       {
+                                           "path":  "BepInEx/core/BepInEx.Unity.IL2CPP.dll",
+                                           "sha256":  "62c8246a3076bfe459ec80c482381228d0eb1dde3434fe97ae5255fef406fe72"
+                                       }
+                                   ]
+                     },
+    "files":  [
+                  {
+                      "path":  "BepInEx/plugins/Security51Thai/Security51ThaiMod.dll",
+                      "size":  13824,
+                      "sha256":  "a400ba6f50fb3c006be0aad5e9b2f282a91ed09a5c51bd047b0f3a8cf341671c"
+                  },
+                  {
+                      "path":  "BepInEx/plugins/Security51Thai/strings.th.json",
+                      "size":  553932,
+                      "sha256":  "df3ef0b113b297a440ae180d8d9587e23e09792aef6c3fea0ce9a64d3a8591c8"
+                  },
+                  {
+                      "path":  "BepInEx/plugins/Security51Thai/fonts/NotoSansThai-Variable.ttf",
+                      "size":  218652,
+                      "sha256":  "5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8"
+                  },
+                  {
+                      "path":  "BepInEx/plugins/Security51Thai/fonts/OFL.txt",
+                      "size":  4380,
+                      "sha256":  "2e98fd23a52d253db8612cd5942c8f2ff4111b21d2367050fdca91d8ccc374a0"
+                  }
+              ]
+}
