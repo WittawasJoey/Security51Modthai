@@ -2,6 +2,27 @@
 
 รูปแบบเวอร์ชันม็อดใช้ Semantic Versioning (`major.minor.patch`) และระบุ Steam build ที่รองรับแยกต่างหากเสมอ
 
+## 0.1.6-beta (Planned / แผนการพัฒนาถัดไป)
+
+- ตรวจสอบและปรับปรุงความสวยงามของการตัดคำและขนาดฟอนต์ (Text Wrapping & Dynamic Auto-sizing) ในหน้าต่างเอกสารรายงานประจำวัน (Daily Isolator Report) และคำอธิบายความผิดปกติ (Anomaly Description)
+- ปรับปรุงการแสดงผลของไอคอนและปุ่มกดคอนโทรลเลอร์ (Gamepad / Steam Deck Controller Prompts) ให้แสดงผลไอคอนอย่างสวยงามในทุกสเกลหน้าจอ
+- ขัดเกลาและตรวจสอบบริบทคำแปลเชิงลึก (In-game Context & Lore Polish) สำหรับเนื้อเรื่องหลักและบทสนทนาทางเลือก
+- อัปเดตและทดสอบความเข้ากันได้ทันทีเมื่อตัวเกม Security 51 มีการอัปเดตแพตช์ Steam Build ใหม่
+
+## 0.1.5-beta — 6 กันยายน 2026
+
+รองรับ Security 51 Steam build `25104142`
+
+- **แก้ไขข้อความ "Button" สีเทาหลุดแสดงในหน้าต่างปฏิบัติการเมือง (City Operations) และขอบจอขวา:**
+  - พิสูจน์สาเหตุที่แท้จริงจาก Prefab และโครงสร้าง UI: ตัวเกมเดิมใช้ `EmptyFont` (PathID: 9393 ใน `resources.assets`) ซึ่งเป็นฟอนต์เปล่าไม่มี glyph เพื่อซ่อนข้อความ placeholder `"Button"` บนปุ่มที่เป็นไอคอนกราฟิกล้วน (`ApplyButton`, `HintButton`, `BackButton`)
+  - แก้ไขกลไก Font Fallback ที่ระดับ Engine TextMeshPro: ยกเลิกการใส่ฟอนต์ภาษาไทยเข้า `TMP_Settings.fallbackFontAssets` และกรองข้ามฟอนต์ตระกูล `"Empty"` เพื่อคืนพฤติกรรมดั้งเดิมของตัวเกม ป้องกันไม่ให้ TextMeshPro ดึงตัวอักษรภาษาอังกฤษจากฟอนต์ไทยมาแสดงผล
+  - เสริมการป้องกันสองชั้น (Two-Layer Defense) ด้วย Harmony Postfix Patches ที่ `CityOperations.Views.CityOperationsWindowView.OnEnable` และ `SetConfirmButtonState` พร้อมตัวกรองซ่อน placeholder ที่ระบุเจาะจงปุ่มไอคอน (`GamepadInput.Icons.InputIconImage`) โดยไม่แตะต้อง component `Button`, `onClick`, `Image`, `raycastTarget` หรือข้อความที่มี Localization
+- **เพิ่มตัวถอนการติดตั้งแบบคลิกเดียว (`Uninstall-SingleClick.cmd` / `Uninstall-SingleClick.ps1`):**
+  - อำนวยความสะดวกให้ผู้ใช้สามารถดับเบิลคลิกเพื่อถอนการติดตั้งม็อดภาษาไทยได้ทันที
+  - ระบบค้นหาตำแหน่งเกมอัตโนมัติจาก Steam Libraries, ตรวจสอบสถานะว่าเกมปิดอยู่หรือไม่, คืนค่าไฟล์เดิมจากข้อมูลสำรอง และคงไฟล์ระบบ BepInEx ไว้อย่างปลอดภัย
+- **ปรับปรุงโครงสร้างโปรเจกต์:**
+  - เพิ่มการอ้างอิง `Assembly-CSharp`, `OdinSerializer`, และ `GamepadInput` ในโปรเจกต์ม็อด C# ทำให้สามารถควบคุม UI lifecycle ได้อย่างปลอดภัยและมีประสิทธิภาพสูงสุด
+
 ## 0.1.4-beta — 6 กันยายน 2026
 
 รองรับ Security 51 Steam build `25104142`

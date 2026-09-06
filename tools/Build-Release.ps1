@@ -38,6 +38,8 @@ Copy-Item -LiteralPath (Join-Path $PSScriptRoot "Install-ThaiMod.ps1") -Destinat
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot "Uninstall-ThaiMod.ps1") -Destination $releaseRoot
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot "Install-SingleClick.ps1") -Destination $releaseRoot
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot "Install-SingleClick.cmd") -Destination $releaseRoot
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot "Uninstall-SingleClick.ps1") -Destination $releaseRoot
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot "Uninstall-SingleClick.cmd") -Destination $releaseRoot
 Copy-Item -LiteralPath (Join-Path $projectRoot "README.md") -Destination $releaseRoot
 Copy-Item -LiteralPath (Join-Path $projectRoot "INSTALL.md") -Destination $releaseRoot
 Copy-Item -LiteralPath (Join-Path $projectRoot "CHANGELOG.md") -Destination $releaseRoot

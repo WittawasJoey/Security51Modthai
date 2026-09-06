@@ -1,6 +1,6 @@
 # Security 51 Thai Mod
 
-ม็อดภาษาไทย Security 51 เวอร์ชัน `0.1.3-beta` ปัจจุบันรองรับ Steam build `25104142` และใช้ BepInEx Unity IL2CPP x64 `6.0.0-be.785+6abdba4`
+ม็อดภาษาไทย Security 51 เวอร์ชัน `0.1.5-beta` ปัจจุบันรองรับ Steam build `25104142` และใช้ BepInEx Unity IL2CPP x64 `6.0.0-be.785+6abdba4`
 
 > รุ่นนี้เล่นเป็นภาษาไทยได้แล้ว มีค่า localization ภาษาไทย 3,481 รายการ ครบ 100% ของข้อความที่ต้องมีค่าใน Steam build `25104142` สถานะ beta หมายถึงยังเปิดรับการแก้คำแปลและการจัดวางตามบริบทในเกม
 
@@ -12,15 +12,21 @@
 
 Installer จะตรวจ Steam build ID, SHA-256 ของ `Security51.exe`, BepInEx core ที่รองรับ และ checksum ของทุกไฟล์ในแพ็กเกจก่อนเขียนไฟล์ หากรายการใดไม่ตรงจะหยุดโดยไม่ติดตั้ง
 
-## ติดตั้งแบบคลิกครั้งเดียว
+## ติดตั้งแบบคลิกเดียว (Single-Click Install)
 
 1. แตกไฟล์ release ZIP ให้เรียบร้อย
-2. ดับเบิลคลิก `Install-SingleClick.cmd`
+2. ดับเบิลคลิก **`Install-SingleClick.cmd`**
 3. ตัวติดตั้งจะค้นหา Security 51 ใน Steam libraries, ตรวจ build/hash, อัปเดตรุ่นเก่า และติดตั้งรุ่นใหม่อัตโนมัติ
 
 ต้องติดตั้ง BepInEx รุ่นที่ระบุไว้ก่อน และต้องปิดเกมระหว่างติดตั้ง หากมีเกมหลายชุดหรือย้ายเกมไปตำแหน่งพิเศษ ให้ใช้วิธี PowerShell ด้านล่างเพื่อระบุ path เอง
 
-## ติดตั้ง
+## ถอนการติดตั้งแบบคลิกเดียว (Single-Click Uninstall)
+
+1. ปิดตัวเกม Security 51 ให้เรียบร้อย
+2. ดับเบิลคลิก **`Uninstall-SingleClick.cmd`**
+3. ตัวถอนการติดตั้งจะค้นหาตำแหน่ง Security 51 ใน Steam libraries อัตโนมัติ, คืนค่าไฟล์เดิมจากสำรอง และลบเฉพาะไฟล์ม็อดภาษาไทยออกอย่างปลอดภัยโดยไม่กระทบต่อ BepInEx หรือม็อดอื่น
+
+## ติดตั้งผ่าน PowerShell
 
 แตกไฟล์ release archive แล้วเปิด PowerShell ในโฟลเดอร์ที่แตก จากนั้นใช้ path เกมของตนเอง:
 
@@ -30,7 +36,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\Install-ThaiMod.ps1 -GameP
 
 Installer สำรองเฉพาะไฟล์ปลายทางที่มีอยู่เดิมไว้ใน `%LOCALAPPDATA%\Security51ThaiMod\backups` และเขียน install record สำหรับการถอนที่ตรวจสอบย้อนกลับได้
 
-## ถอนการติดตั้ง
+## ถอนการติดตั้งผ่าน PowerShell
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\Uninstall-ThaiMod.ps1 -GamePath "D:\SteamLibrary\steamapps\common\Security 51"
@@ -43,7 +49,7 @@ Uninstaller ลบเฉพาะไฟล์ที่แพ็กเกจน�
 ไฟล์ `.zip.sha256` ที่มากับ release ใช้ตรวจว่า archive ไม่เสียหาย:
 
 ```powershell
-Get-FileHash .\Security51ThaiMod-v0.1.1-game25104142.zip -Algorithm SHA256
+Get-FileHash .\Security51ThaiMod-v0.1.5-game25104142.zip -Algorithm SHA256
 ```
 
 ## สร้างแพ็กเกจจาก source
@@ -66,7 +72,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Check-Game-Version.p
 
 ## สถานะและข้อจำกัด
 
-- Runtime รุ่นก่อนยืนยันแล้วว่าเกมโหลดและใช้คำแปล `3,457/3,457` รายการโดยไม่มี plugin error; รุ่น `0.1.1` เพิ่มค่าเมนูภาษา/Steam Deck อีก 24 รายการ รวมเป็น 3,481 รายการและรอตรวจภาพหลังติดตั้ง
+- Runtime ยืนยันแล้วว่าเกมโหลดและใช้คำแปล `3,481` รายการครบถ้วนโดยไม่มี plugin error
+- แก้ไขปัญหาข้อความ "Button" สีเทาหลุดทับปุ่มในหน้า City Operations และ UI อื่น ๆ จาก Font Fallback ของ EmptyFont แล้วใน v0.1.5
 - `Story_Dial` แปลฉบับร่างครบ 386/386
 - `NewsAndReports` แปลฉบับร่างครบ 133/133
 - เครดิตที่มีข้อความต้นฉบับแปลฉบับร่างครบ 2/2

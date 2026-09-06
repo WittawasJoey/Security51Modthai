@@ -1,4 +1,4 @@
-# คู่มือการติดตั้ง Security 51 Thai Mod (เวอร์ชัน 0.1.3-beta)
+# คู่มือการติดตั้ง Security 51 Thai Mod (เวอร์ชัน 0.1.5-beta)
 
 คู่มือนี้แนะนำขั้นตอนการติดตั้ง การอัปเดต และการถอนการติดตั้งม็อดภาษาไทยสำหรับเกม **Security 51** (Steam Build `25104142`)
 
@@ -39,7 +39,7 @@
 powershell -NoProfile -ExecutionPolicy Bypass -File .\Install-ThaiMod.ps1 -GamePath "D:\SteamLibrary\steamapps\common\Security 51"
 ```
 
-3. เมื่อระบบแสดงข้อความ `Security 51 Thai Mod 0.1.3 installed.` แสดงว่าติดตั้งเสร็จสมบูรณ์
+3. เมื่อระบบแสดงข้อความ `Security 51 Thai Mod 0.1.5 installed.` แสดงว่าติดตั้งเสร็จสมบูรณ์
 
 ---
 
@@ -52,7 +52,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\Install-ThaiMod.ps1 -GameP
    `Security 51\BepInEx\LogOutput.log`
    จะพบบรรทัด:
    ```text
-   [Info :Security 51 Thai Mod] Security 51 Thai Mod 0.1.3 loaded with 3481 translations.
+   [Info :Security 51 Thai Mod] Security 51 Thai Mod 0.1.5 loaded with 3481 translations.
    [Info :Security 51 Thai Mod] Created Thai TMP fallback from bundled font 'NotoSansThai-Variable.ttf'.
    [Info :Security 51 Thai Mod] Applied 3481 Thai term values (UpdateSources).
    ```
@@ -62,6 +62,16 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\Install-ThaiMod.ps1 -GameP
 ## 4. วิธีถอนการติดตั้ง (Uninstall)
 
 หากต้องการลบม็อดภาษาไทยออกเพื่อกลับไปใช้ภาษาอังกฤษดั้งเดิม:
+
+### วิธีที่ 1: ถอนการติดตั้งแบบคลิกเดียว (Single-Click Uninstall — แนะนำสำหรับผู้ใช้ทั่วไป)
+
+1. ปิดตัวเกม Security 51 ให้เรียบร้อย
+2. ดับเบิลคลิกไฟล์ **`Uninstall-SingleClick.cmd`** ในโฟลเดอร์ม็อด
+3. ระบบจะค้นหาตำแหน่งเกมอัตโนมัติและถอนการติดตั้งม็อดภาษาไทยออกอย่างสมบูรณ์ พร้อมกู้คืนไฟล์เดิม (หากมี) โดยไม่ลบ BepInEx หรือม็อดตัวอื่น ๆ
+
+---
+
+### วิธีที่ 2: ถอนการติดตั้งผ่าน PowerShell (กรณีติดตั้งเกมในตำแหน่งพิเศษ)
 
 1. ปิดตัวเกมให้เรียบร้อย
 2. เปิด PowerShell ในโฟลเดอร์ม็อด แล้วรันคำสั่ง:

@@ -1,7 +1,7 @@
 param(
     [string]$GamePath,
     [string]$PackagePath = $PSScriptRoot,
-    [switch]$DetectOnly
+    [switch]$Force
 )
 
 $ErrorActionPreference = "Stop"
@@ -60,47 +60,65 @@ function Find-Security51Game {
     } | Select-Object -Unique)
 
     if ($matches.Count -eq 0) {
-        throw "Security 51 was not found in any Steam library. Use Install-SingleClick.ps1 -GamePath <path> for a custom location."
+        throw "Security 51 was not found in any Steam library. Use Uninstall-SingleClick.ps1 -GamePath <path> for a custom location."
     }
     if ($matches.Count -gt 1) {
-        throw "Multiple Security 51 installations were found. Use Install-SingleClick.ps1 -GamePath <path> to select one."
+        throw "Multiple Security 51 installations were found. Use Uninstall-SingleClick.ps1 -GamePath <path> to select one."
     }
     return $matches[0]
 }
 
 $packageRoot = (Resolve-Path -LiteralPath $PackagePath).Path
-$manifestPath = Join-Path $packageRoot "release-manifest.json"
-if (-not (Test-Path -LiteralPath $manifestPath -PathType Leaf)) {
-    throw "Run this file from an extracted release folder containing release-manifest.json."
-}
-$manifest = Get-Content -LiteralPath $manifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
 $gameRoot = Find-Security51Game -ExplicitPath $GamePath
 
 Write-Output "Security 51 found: $gameRoot"
-Write-Output "Package version: $($manifest.modVersion) (game build $($manifest.game.buildId))"
-if ($DetectOnly) {
-    Write-Output "Detection: OK"
-    exit 0
+
+# Ensure game is not currently running
+$gameExe = Join-Path $gameRoot "Security51.exe"
+$targetExePath = [IO.Path]::GetFullPath($gameExe)
+$runningTarget = Get-Process -Name "Security51" -ErrorAction SilentlyContinue | Where-Object {
+    try { [IO.Path]::GetFullPath($_.Path) -eq $targetExePath } catch { $true }
+}
+if ($runningTarget) {
+    throw "Security 51 is running. Please close the game before uninstalling."
 }
 
 $pointerPath = Join-Path $gameRoot "Security51ThaiMod.install.json"
-if (Test-Path -LiteralPath $pointerPath -PathType Leaf) {
-    $pointer = Get-Content -LiteralPath $pointerPath -Raw -Encoding UTF8 | ConvertFrom-Json
-    $recordPath = [string]$pointer.installRecord
-    if ($recordPath -and (Test-Path -LiteralPath $recordPath -PathType Leaf)) {
-        $record = Get-Content -LiteralPath $recordPath -Raw -Encoding UTF8 | ConvertFrom-Json
-        if ([string]$record.modVersion -eq [string]$manifest.modVersion) {
-            Write-Output "Security 51 Thai Mod $($manifest.modVersion) is already installed."
-            exit 0
-        }
+$pluginDir = Join-Path $gameRoot "BepInEx\plugins\Security51Thai"
+$uninstallerScript = Join-Path $packageRoot "Uninstall-ThaiMod.ps1"
 
-        Write-Output "Updating Security 51 Thai Mod $($record.modVersion) to $($manifest.modVersion)..."
-        & (Join-Path $packageRoot "Uninstall-ThaiMod.ps1") -GamePath $gameRoot
+if (-not (Test-Path -LiteralPath $pointerPath -PathType Leaf) -and -not (Test-Path -LiteralPath $pluginDir)) {
+    Write-Output "Security 51 Thai Mod is not installed in: $gameRoot"
+    exit 0
+}
+
+if (Test-Path -LiteralPath $pointerPath -PathType Leaf) {
+    if (Test-Path -LiteralPath $uninstallerScript -PathType Leaf) {
+        $uninstallArgs = @{ GamePath = $gameRoot }
+        if ($Force) { $uninstallArgs["Force"] = $true }
+        & $uninstallerScript @uninstallArgs
     } else {
-        Write-Warning "Orphaned install pointer found without backing record. Removing pointer..."
+        # Fallback if uninstaller script is missing
+        $pointer = Get-Content -LiteralPath $pointerPath -Raw -Encoding UTF8 | ConvertFrom-Json
+        $recordPath = [string]$pointer.installRecord
+        if ($recordPath -and (Test-Path -LiteralPath $recordPath -PathType Leaf)) {
+            $record = Get-Content -LiteralPath $recordPath -Raw -Encoding UTF8 | ConvertFrom-Json
+            foreach ($entry in $record.files) {
+                $targetFile = [IO.Path]::GetFullPath((Join-Path $gameRoot ([string]$entry.path)))
+                if (Test-Path -LiteralPath $targetFile) {
+                    Remove-Item -LiteralPath $targetFile -Force -Recurse
+                }
+            }
+        }
         Remove-Item -LiteralPath $pointerPath -Force
     }
 }
 
-& (Join-Path $packageRoot "Install-ThaiMod.ps1") -GamePath $gameRoot -PackagePath $packageRoot
-Write-Output "Single-click installation completed successfully."
+$pluginDir = Join-Path $gameRoot "BepInEx\plugins\Security51Thai"
+if (Test-Path -LiteralPath $pluginDir) {
+    Write-Output "Removing Security51Thai plugin directory..."
+    Remove-Item -LiteralPath $pluginDir -Recurse -Force
+    Write-Output "Removed: $pluginDir"
+}
+
+Write-Output "Security 51 Thai Mod uninstalled successfully. Other BepInEx files were left untouched."
