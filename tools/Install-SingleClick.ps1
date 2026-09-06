@@ -86,14 +86,20 @@ if ($DetectOnly) {
 $pointerPath = Join-Path $gameRoot "Security51ThaiMod.install.json"
 if (Test-Path -LiteralPath $pointerPath -PathType Leaf) {
     $pointer = Get-Content -LiteralPath $pointerPath -Raw -Encoding UTF8 | ConvertFrom-Json
-    $record = Get-Content -LiteralPath ([string]$pointer.installRecord) -Raw -Encoding UTF8 | ConvertFrom-Json
-    if ([string]$record.modVersion -eq [string]$manifest.modVersion) {
-        Write-Output "Security 51 Thai Mod $($manifest.modVersion) is already installed."
-        exit 0
-    }
+    $recordPath = [string]$pointer.installRecord
+    if ($recordPath -and (Test-Path -LiteralPath $recordPath -PathType Leaf)) {
+        $record = Get-Content -LiteralPath $recordPath -Raw -Encoding UTF8 | ConvertFrom-Json
+        if ([string]$record.modVersion -eq [string]$manifest.modVersion) {
+            Write-Output "Security 51 Thai Mod $($manifest.modVersion) is already installed."
+            exit 0
+        }
 
-    Write-Output "Updating Security 51 Thai Mod $($record.modVersion) to $($manifest.modVersion)..."
-    & (Join-Path $packageRoot "Uninstall-ThaiMod.ps1") -GamePath $gameRoot
+        Write-Output "Updating Security 51 Thai Mod $($record.modVersion) to $($manifest.modVersion)..."
+        & (Join-Path $packageRoot "Uninstall-ThaiMod.ps1") -GamePath $gameRoot
+    } else {
+        Write-Warning "Orphaned install pointer found without backing record. Removing pointer..."
+        Remove-Item -LiteralPath $pointerPath -Force
+    }
 }
 
 & (Join-Path $packageRoot "Install-ThaiMod.ps1") -GamePath $gameRoot -PackagePath $packageRoot

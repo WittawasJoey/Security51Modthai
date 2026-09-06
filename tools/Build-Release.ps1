@@ -39,6 +39,7 @@ Copy-Item -LiteralPath (Join-Path $PSScriptRoot "Uninstall-ThaiMod.ps1") -Destin
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot "Install-SingleClick.ps1") -Destination $releaseRoot
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot "Install-SingleClick.cmd") -Destination $releaseRoot
 Copy-Item -LiteralPath (Join-Path $projectRoot "README.md") -Destination $releaseRoot
+Copy-Item -LiteralPath (Join-Path $projectRoot "INSTALL.md") -Destination $releaseRoot
 Copy-Item -LiteralPath (Join-Path $projectRoot "CHANGELOG.md") -Destination $releaseRoot
 Copy-Item -LiteralPath (Join-Path $projectRoot "version.json") -Destination $releaseRoot
 Copy-Item -LiteralPath (Join-Path $projectRoot "docs\GAME_UPDATE_WORKFLOW.md") -Destination $releaseRoot
@@ -82,3 +83,11 @@ Set-Content -LiteralPath "$archivePath.sha256" -Value "$archiveHash  $([IO.Path]
 Write-Output "Release package: $releaseRoot"
 Write-Output "Archive: $archivePath"
 Write-Output "SHA-256: $archiveHash"
+
+$publicReleaseDir = Join-Path $projectRoot "release"
+New-Item -ItemType Directory -Path $publicReleaseDir -Force | Out-Null
+Copy-Item -LiteralPath $archivePath -Destination $publicReleaseDir -Force
+Copy-Item -LiteralPath "$archivePath.sha256" -Destination $publicReleaseDir -Force
+Copy-Item -LiteralPath (Join-Path $projectRoot "INSTALL.md") -Destination $publicReleaseDir -Force
+Write-Output "Public release files copied to: $publicReleaseDir"
+

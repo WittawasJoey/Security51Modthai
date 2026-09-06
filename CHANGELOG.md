@@ -2,6 +2,15 @@
 
 รูปแบบเวอร์ชันม็อดใช้ Semantic Versioning (`major.minor.patch`) และระบุ Steam build ที่รองรับแยกต่างหากเสมอ
 
+## 0.1.3-beta — 6 กันยายน 2026
+
+รองรับ Security 51 Steam build `25104142`
+
+- แก้ไขปัญหาเกมหน่วง/กระตุกรุนแรง (Micro-stutter / Frame drop) ขณะโต้ตอบกับ NPC หรือกด Shift เพื่อคุย
+- ถอด Hook `LocalizationManager.InitializeIfNeeded` ซึ่งถูกเรียกซ้ำทุกครั้งที่มีการดึงข้อความแปล
+- เพิ่ม Guard flag ป้องกันการฉีดคำแปลและฟอนต์ซ้ำซ้อนใน Main Thread ทำให้รันเพียง 1 ครั้งในรอบเปิดเกม
+- ตรวจสอบความพร้อมของ `LanguageSourceData` ก่อนทำงาน เพื่อลดภาระการวนลูป 3,481 รายการและการสแกน GameObject ในฉาก
+
 ## 0.1.2-beta — 4 กันยายน 2026
 
 รองรับ Security 51 Steam build `25104142`

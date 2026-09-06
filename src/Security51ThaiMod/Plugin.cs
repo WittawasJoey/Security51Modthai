@@ -15,7 +15,7 @@ public sealed class Plugin : BasePlugin
 {
     public const string PluginGuid = "th.security51.localization";
     public const string PluginName = "Security 51 Thai Mod";
-    public const string PluginVersion = "0.1.2";
+    public const string PluginVersion = "0.1.3";
 
     private Harmony _harmony;
 
@@ -26,7 +26,6 @@ public sealed class Plugin : BasePlugin
         ModRuntime.LoadTranslations();
 
         _harmony = new Harmony(PluginGuid);
-        _harmony.PatchAll(typeof(LocalizationInitializePatch));
         _harmony.PatchAll(typeof(LocalizationUpdateSourcesPatch));
 
         Log.LogInfo($"{PluginName} {PluginVersion} loaded with {ModRuntime.TranslationCount} translations.");
@@ -50,6 +49,7 @@ internal static class ModRuntime
 
     private static Dictionary<string, string> _translations = new(StringComparer.Ordinal);
     private static bool _applying;
+    private static bool _applied;
     private static TMP_FontAsset _thaiFontAsset;
     private static readonly HashSet<int> HiddenPlaceholderInstanceIds = new();
 
@@ -84,6 +84,12 @@ internal static class ModRuntime
             if (sources is null || sources.Count == 0)
             {
                 Logger?.LogDebug($"I2 sources are not ready ({trigger}).");
+                return;
+            }
+
+            if (_applied && AreAllSourcesConfigured())
+            {
+                Logger?.LogDebug($"Thai localization already applied and sources are up to date ({trigger}).");
                 return;
             }
 
@@ -145,6 +151,7 @@ internal static class ModRuntime
             {
                 Logger?.LogError($"Thai translations were applied, but font fallback failed: {fontException}");
             }
+            _applied = true;
             Logger?.LogInfo($"Applied {applied} Thai term values ({trigger}).");
         }
         catch (Exception exception)
@@ -155,6 +162,27 @@ internal static class ModRuntime
         {
             _applying = false;
         }
+    }
+
+    private static bool AreAllSourcesConfigured()
+    {
+        var sources = LocalizationManager.Sources;
+        if (sources is null || sources.Count == 0)
+            return false;
+
+        foreach (var source in sources)
+        {
+            if (source is null)
+                continue;
+
+            var languageIndex = source.GetLanguageIndexFromCode(
+                ThaiLanguageCode,
+                exactMatch: true,
+                ignoreDisabled: true);
+            if (languageIndex < 0)
+                return false;
+        }
+        return true;
     }
 
     private static void InjectThaiFontFallback()
@@ -266,13 +294,6 @@ internal static class ModRuntime
             Logger?.LogInfo($"Hidden {hidden} stray UI placeholder label(s) containing the exact text 'Button'.");
     }
 
-}
-
-[HarmonyPatch(typeof(LocalizationManager), nameof(LocalizationManager.InitializeIfNeeded))]
-internal static class LocalizationInitializePatch
-{
-    [HarmonyPostfix]
-    private static void Postfix() => ModRuntime.TryApply("InitializeIfNeeded");
 }
 
 [HarmonyPatch(typeof(LocalizationManager), nameof(LocalizationManager.UpdateSources))]
