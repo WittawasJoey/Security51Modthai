@@ -19,7 +19,7 @@ public sealed class Plugin : BasePlugin
 {
     public const string PluginGuid = "th.security51.localization";
     public const string PluginName = "Security 51 Thai Mod";
-    public const string PluginVersion = "0.1.4";
+    public const string PluginVersion = "0.1.5";
 
     private Harmony _harmony;
 
@@ -31,6 +31,8 @@ public sealed class Plugin : BasePlugin
 
         _harmony = new Harmony(PluginGuid);
         _harmony.PatchAll(typeof(LocalizationUpdateSourcesPatch));
+        _harmony.PatchAll(typeof(CityOperationsWindowViewOnEnablePatch));
+        _harmony.PatchAll(typeof(CityOperationsWindowViewSetConfirmButtonStatePatch));
         // Note: LocalizationInitializePatch is deliberately omitted. Hooking InitializeIfNeeded
         // caused infinite recursion with get_CurrentLanguage() triggering 0xc00000fd (stack overflow).
 
@@ -107,6 +109,7 @@ internal static class ModRuntime
     {
         Logger?.LogDebug($"Scene loaded: {sceneName}");
         TryApply($"SceneLoaded:{sceneName}");
+        HideStrayButtonPlaceholderLabels();
     }
 
     internal static void EnsureThaiActive(string trigger)
@@ -287,14 +290,25 @@ internal static class ModRuntime
         }
 
         var globalFallbacks = TMP_Settings.fallbackFontAssets;
-        if (globalFallbacks is not null && !globalFallbacks.Contains(_thaiFontAsset))
-            globalFallbacks.Add(_thaiFontAsset);
+        if (globalFallbacks is not null && globalFallbacks.Contains(_thaiFontAsset))
+            globalFallbacks.Remove(_thaiFontAsset);
 
         // Iterate font assets directly (O(fonts) instead of O(all text components in hierarchy))
         foreach (var font in Resources.FindObjectsOfTypeAll<TMP_FontAsset>())
         {
             if (font is null || font == _thaiFontAsset)
                 continue;
+
+            // Never inject fallback into EmptyFont or zero-glyph dummy placeholder fonts
+            var fontName = font.name;
+            if (!string.IsNullOrEmpty(fontName) && fontName.IndexOf("Empty", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                if (font.fallbackFontAssetTable is not null && font.fallbackFontAssetTable.Contains(_thaiFontAsset))
+                {
+                    font.fallbackFontAssetTable.Remove(_thaiFontAsset);
+                }
+                continue;
+            }
 
             var ptr = font.Pointer;
             if (_configuredFontPointers.Contains(ptr))
@@ -331,7 +345,189 @@ internal static class ModRuntime
         return true;
     }
 
-    private static void HideStrayButtonPlaceholderLabels()
+    internal static void CleanWindowViewButtons(CityOperations.Views.CityOperationsWindowView view)
+    {
+        if (view is null) return;
+        try
+        {
+            CleanButtonPlaceholder(view.confirmButton);
+            CleanButtonPlaceholder(view.backButton);
+
+            var buttons = view.GetComponentsInChildren<UnityEngine.UI.Button>(true);
+            if (buttons is not null)
+            {
+                foreach (var btn in buttons)
+                {
+                    CleanButtonPlaceholder(btn);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger?.LogWarning($"Error cleaning buttons in CityOperationsWindowView: {ex.Message}");
+        }
+    }
+
+    internal static void CleanButtonPlaceholder(UnityEngine.UI.Button button)
+    {
+        if (button is null) return;
+        try
+        {
+            var allTmp = button.GetComponentsInChildren<TMP_Text>(true);
+            if (allTmp is not null)
+            {
+                foreach (var text in allTmp)
+                {
+                    if (text is null) continue;
+                    if (IsPlaceholderLabel(text, button))
+                    {
+                        text.enabled = false;
+                        _hiddenPlaceholderInstanceIds.Add(text.GetInstanceID());
+                    }
+                }
+            }
+
+            var allUiText = button.GetComponentsInChildren<UnityEngine.UI.Text>(true);
+            if (allUiText is not null)
+            {
+                foreach (var text in allUiText)
+                {
+                    if (text is null) continue;
+                    if (IsPlaceholderLabel(text, button))
+                    {
+                        text.enabled = false;
+                        _hiddenPlaceholderInstanceIds.Add(text.GetInstanceID());
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger?.LogWarning($"CleanButtonPlaceholder failed for button '{button.name}': {ex.Message}");
+        }
+    }
+
+    private static bool IsPlaceholderLabel(TMP_Text text, UnityEngine.UI.Button button)
+    {
+        if (text is null || button is null)
+            return false;
+
+        // Never hide localized text
+        if (text.GetComponent<I2.Loc.Localize>() is not null)
+            return false;
+
+        var rawText = text.text;
+        if (string.IsNullOrWhiteSpace(rawText))
+            return false;
+
+        if (!string.Equals(rawText.Trim(), "Button", StringComparison.OrdinalIgnoreCase))
+            return false;
+
+        // Condition A: Font is explicitly an Empty font (placeholder font intended to have 0 glyphs)
+        var font = text.font;
+        if (font is not null && !string.IsNullOrEmpty(font.name) &&
+            font.name.IndexOf("Empty", StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            return true;
+        }
+
+        // Condition B: Parent button already has another valid text label
+        var allTmp = button.GetComponentsInChildren<TMP_Text>(true);
+        if (allTmp is not null)
+        {
+            foreach (var other in allTmp)
+            {
+                if (other is not null && other != text &&
+                    !string.Equals(other.text?.Trim(), "Button", StringComparison.OrdinalIgnoreCase) &&
+                    !string.IsNullOrWhiteSpace(other.text))
+                {
+                    return true;
+                }
+            }
+        }
+
+        var allUiText = button.GetComponentsInChildren<UnityEngine.UI.Text>(true);
+        if (allUiText is not null)
+        {
+            foreach (var other in allUiText)
+            {
+                if (other is not null &&
+                    !string.Equals(other.text?.Trim(), "Button", StringComparison.OrdinalIgnoreCase) &&
+                    !string.IsNullOrWhiteSpace(other.text))
+                {
+                    return true;
+                }
+            }
+        }
+
+        // Condition C: Button contains an icon component (e.g. InputIconImage)
+        if (button.GetComponentInChildren<GamepadInput.Icons.InputIconImage>(true) is not null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private static bool IsPlaceholderLabel(UnityEngine.UI.Text text, UnityEngine.UI.Button button)
+    {
+        if (text is null || button is null)
+            return false;
+
+        if (text.GetComponent<I2.Loc.Localize>() is not null)
+            return false;
+
+        var rawText = text.text;
+        if (string.IsNullOrWhiteSpace(rawText))
+            return false;
+
+        if (!string.Equals(rawText.Trim(), "Button", StringComparison.OrdinalIgnoreCase))
+            return false;
+
+        var font = text.font;
+        if (font is not null && !string.IsNullOrEmpty(font.name) &&
+            font.name.IndexOf("Empty", StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            return true;
+        }
+
+        var allUiText = button.GetComponentsInChildren<UnityEngine.UI.Text>(true);
+        if (allUiText is not null)
+        {
+            foreach (var other in allUiText)
+            {
+                if (other is not null && other != text &&
+                    !string.Equals(other.text?.Trim(), "Button", StringComparison.OrdinalIgnoreCase) &&
+                    !string.IsNullOrWhiteSpace(other.text))
+                {
+                    return true;
+                }
+            }
+        }
+
+        var allTmp = button.GetComponentsInChildren<TMP_Text>(true);
+        if (allTmp is not null)
+        {
+            foreach (var other in allTmp)
+            {
+                if (other is not null &&
+                    !string.Equals(other.text?.Trim(), "Button", StringComparison.OrdinalIgnoreCase) &&
+                    !string.IsNullOrWhiteSpace(other.text))
+                {
+                    return true;
+                }
+            }
+        }
+
+        if (button.GetComponentInChildren<GamepadInput.Icons.InputIconImage>(true) is not null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    internal static void HideStrayButtonPlaceholderLabels()
     {
         // 1. Re-enable any previously hidden components whose text dynamically changed away from "Button"
         if (_hiddenPlaceholderInstanceIds.Count > 0)
@@ -341,7 +537,7 @@ internal static class ModRuntime
                 if (text is null) continue;
                 var id = text.GetInstanceID();
                 if (_hiddenPlaceholderInstanceIds.Contains(id) &&
-                    !string.Equals(text.text?.Trim(), "Button", StringComparison.Ordinal))
+                    !string.Equals(text.text?.Trim(), "Button", StringComparison.OrdinalIgnoreCase))
                 {
                     text.enabled = true;
                     _hiddenPlaceholderInstanceIds.Remove(id);
@@ -352,7 +548,7 @@ internal static class ModRuntime
                 if (text is null) continue;
                 var id = text.GetInstanceID();
                 if (_hiddenPlaceholderInstanceIds.Contains(id) &&
-                    !string.Equals(text.text?.Trim(), "Button", StringComparison.Ordinal))
+                    !string.Equals(text.text?.Trim(), "Button", StringComparison.OrdinalIgnoreCase))
                 {
                     text.enabled = true;
                     _hiddenPlaceholderInstanceIds.Remove(id);
@@ -362,50 +558,14 @@ internal static class ModRuntime
 
         var hidden = 0;
 
-        // 2. Surgically inspect TMP_Text components
+        // 2. Surgically inspect TMP_Text components on buttons
         foreach (var text in Resources.FindObjectsOfTypeAll<TMP_Text>())
         {
-            if (text is null || !string.Equals(text.text?.Trim(), "Button", StringComparison.Ordinal))
-                continue;
-
-            // SAFETY: Never disable any component that has an I2.Loc.Localize component attached!
-            if (text.GetComponent<I2.Loc.Localize>() is not null)
-                continue;
-
-            // Only hide if the parent button already contains another valid localized label
+            if (text is null) continue;
             var button = text.GetComponentInParent<UnityEngine.UI.Button>();
-            if (button is null)
-                continue;
+            if (button is null) continue;
 
-            var hasOtherLabel = false;
-            var allTmp = button.GetComponentsInChildren<TMP_Text>(true);
-            foreach (var other in allTmp)
-            {
-                if (other is not null && other != text &&
-                    !string.Equals(other.text?.Trim(), "Button", StringComparison.Ordinal) &&
-                    !string.IsNullOrWhiteSpace(other.text))
-                {
-                    hasOtherLabel = true;
-                    break;
-                }
-            }
-
-            if (!hasOtherLabel)
-            {
-                var allUiText = button.GetComponentsInChildren<UnityEngine.UI.Text>(true);
-                foreach (var other in allUiText)
-                {
-                    if (other is not null &&
-                        !string.Equals(other.text?.Trim(), "Button", StringComparison.Ordinal) &&
-                        !string.IsNullOrWhiteSpace(other.text))
-                    {
-                        hasOtherLabel = true;
-                        break;
-                    }
-                }
-            }
-
-            if (hasOtherLabel)
+            if (IsPlaceholderLabel(text, button))
             {
                 text.enabled = false;
                 if (_hiddenPlaceholderInstanceIds.Add(text.GetInstanceID()))
@@ -413,49 +573,14 @@ internal static class ModRuntime
             }
         }
 
-        // 3. Surgically inspect standard UnityEngine.UI.Text components
+        // 3. Surgically inspect standard UnityEngine.UI.Text components on buttons
         foreach (var text in Resources.FindObjectsOfTypeAll<UnityEngine.UI.Text>())
         {
-            if (text is null || !string.Equals(text.text?.Trim(), "Button", StringComparison.Ordinal))
-                continue;
-
-            // SAFETY: Never disable any component that has an I2.Loc.Localize component attached!
-            if (text.GetComponent<I2.Loc.Localize>() is not null)
-                continue;
-
+            if (text is null) continue;
             var button = text.GetComponentInParent<UnityEngine.UI.Button>();
-            if (button is null)
-                continue;
+            if (button is null) continue;
 
-            var hasOtherLabel = false;
-            var allUiText = button.GetComponentsInChildren<UnityEngine.UI.Text>(true);
-            foreach (var other in allUiText)
-            {
-                if (other is not null && other != text &&
-                    !string.Equals(other.text?.Trim(), "Button", StringComparison.Ordinal) &&
-                    !string.IsNullOrWhiteSpace(other.text))
-                {
-                    hasOtherLabel = true;
-                    break;
-                }
-            }
-
-            if (!hasOtherLabel)
-            {
-                var allTmp = button.GetComponentsInChildren<TMP_Text>(true);
-                foreach (var other in allTmp)
-                {
-                    if (other is not null &&
-                        !string.Equals(other.text?.Trim(), "Button", StringComparison.Ordinal) &&
-                        !string.IsNullOrWhiteSpace(other.text))
-                    {
-                        hasOtherLabel = true;
-                        break;
-                    }
-                }
-            }
-
-            if (hasOtherLabel)
+            if (IsPlaceholderLabel(text, button))
             {
                 text.enabled = false;
                 if (_hiddenPlaceholderInstanceIds.Add(text.GetInstanceID()))
@@ -473,4 +598,26 @@ internal static class LocalizationUpdateSourcesPatch
 {
     [HarmonyPostfix]
     private static void Postfix() => ModRuntime.TryApply("UpdateSources");
+}
+
+[HarmonyPatch(typeof(CityOperations.Views.CityOperationsWindowView), nameof(CityOperations.Views.CityOperationsWindowView.OnEnable))]
+internal static class CityOperationsWindowViewOnEnablePatch
+{
+    [HarmonyPostfix]
+    private static void Postfix(CityOperations.Views.CityOperationsWindowView __instance)
+    {
+        if (__instance is null) return;
+        ModRuntime.CleanWindowViewButtons(__instance);
+    }
+}
+
+[HarmonyPatch(typeof(CityOperations.Views.CityOperationsWindowView), nameof(CityOperations.Views.CityOperationsWindowView.SetConfirmButtonState))]
+internal static class CityOperationsWindowViewSetConfirmButtonStatePatch
+{
+    [HarmonyPostfix]
+    private static void Postfix(CityOperations.Views.CityOperationsWindowView __instance)
+    {
+        if (__instance is null) return;
+        ModRuntime.CleanButtonPlaceholder(__instance.confirmButton);
+    }
 }

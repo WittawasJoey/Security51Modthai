@@ -6,7 +6,7 @@
     <LangVersion>10.0</LangVersion>
     <AssemblyName>Security51ThaiMod</AssemblyName>
     <RootNamespace>Security51ThaiMod</RootNamespace>
-    <Version>0.1.4</Version>
+    <Version>0.1.5</Version>
     <GameRoot Condition="'$(GameRoot)' == ''">D:\SteamLibrary\steamapps\common\Security 51</GameRoot>
     <BepInExCore>$(GameRoot)\BepInEx\core</BepInExCore>
     <InteropDir>$(GameRoot)\BepInEx\interop</InteropDir>
@@ -25,5 +25,8 @@
     <Reference Include="UnityEngine.TextCoreFontEngineModule" HintPath="$(InteropDir)\UnityEngine.TextCoreFontEngineModule.dll" Private="false" />
     <Reference Include="UnityEngine.UI" HintPath="$(InteropDir)\UnityEngine.UI.dll" Private="false" />
     <Reference Include="Unity.TextMeshPro" HintPath="$(InteropDir)\Unity.TextMeshPro.dll" Private="false" />
+    <Reference Include="Assembly-CSharp" HintPath="$(InteropDir)\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="OdinSerializer" HintPath="$(InteropDir)\OdinSerializer.dll" Private="false" />
+    <Reference Include="GamepadInput" HintPath="$(InteropDir)\GamepadInput.dll" Private="false" />
   </ItemGroup>
 </Project>
