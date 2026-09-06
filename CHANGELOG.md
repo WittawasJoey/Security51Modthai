@@ -2,7 +2,19 @@
 
 รูปแบบเวอร์ชันม็อดใช้ Semantic Versioning (`major.minor.patch`) และระบุ Steam build ที่รองรับแยกต่างหากเสมอ
 
+## 0.1.4-beta — 6 กันยายน 2026
+
+รองรับ Security 51 Steam build `25104142`
+
+- แก้ไขปัญหาเกมแครชตอนเปิดเกม `0xc00000fd` (Stack Overflow): ถอด Hook `LocalizationManager.InitializeIfNeeded` อย่างถาวรหลังพิสูจน์ด้วย Native Disassembly ว่า `CurrentLanguage` มีการเรียก `InitializeIfNeeded` ภายใน ทำให้เกิด Recursion วนลูปไม่รู้จบ
+- ตรวจสอบสถานะภาษาอย่างปลอดภัยผ่าน raw backing field `mCurrentLanguage` โดยไม่กระตุ้นการทำงานของ `InitializeIfNeeded`
+- ลด Overhead และขจัด Micro-stutter: ใช้ Pointer Tracking (`_configuredSourcePointers` และ `_configuredFontPointers`) จัดการเฉพาะ Source และ Font ที่เพิ่งโหลดใหม่ โดยไม่ต้องวนซ้ำ 3,481 รายการในฉากเดิม
+- Pre-cache Glyph ภาษาไทยล่วงหน้า: บันทึกอักขระภาษาไทยทั้งช่วง Unicode (U+0E01–U+0E5B) พร้อมฟีเจอร์การจัดวรรณยุกต์ OpenType (`includeFontFeatures: true`) เข้า Dynamic Atlas ตั้งแต่โหลดเสร็จ ป้องกันการกระตุกระหว่างบทสนทนา
+- ตัวกรอง placeholder แบบ Surgical & Non-destructive: ซ่อนเฉพาะข้อความ "Button" ที่ซ้อนทับปุ่มซึ่งมีป้ายข้อความแปลอยู่แล้ว และจะไม่แตะต้อง component ที่มี `I2.Loc.Localize` พร้อมคืนค่าการแสดงผลทันทีหากข้อความเปลี่ยนไปจากเดิม
+- ปรับปรุงความปลอดภัยตัวติดตั้ง Single-Click: ทำ Pre-flight Validation (Hash ของไฟล์เกม, Steam build ID, BepInEx core, Package payload) ให้เสร็จสิ้นก่อนเริ่มถอนหรือแก้ไขไฟล์เดิม และมีระบบตรวจจับไฟล์เสียหายเพื่อซ่อมแซม (Auto-repair) อัตโนมัติ
+
 ## 0.1.3-beta — 6 กันยายน 2026
+
 
 รองรับ Security 51 Steam build `25104142`
 

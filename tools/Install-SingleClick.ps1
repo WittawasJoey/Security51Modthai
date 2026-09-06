@@ -68,6 +68,65 @@ function Find-Security51Game {
     return $matches[0]
 }
 
+function Test-PreflightChecks {
+    param(
+        [string]$GameRoot,
+        [string]$PackageRoot,
+        [psobject]$Manifest
+    )
+
+    $gameExe = Join-Path $GameRoot ([string]$Manifest.game.executable)
+    if (-not (Test-Path -LiteralPath $gameExe -PathType Leaf)) {
+        throw "Security51.exe not found in $GameRoot"
+    }
+
+    $targetExePath = [IO.Path]::GetFullPath($gameExe)
+    $runningTarget = Get-Process -Name "Security51" -ErrorAction SilentlyContinue | Where-Object {
+        try { [IO.Path]::GetFullPath($_.Path) -eq $targetExePath } catch { $true }
+    }
+    if ($runningTarget) {
+        throw "Security 51 is running from the target game directory. Close it before installing."
+    }
+
+    $actualExeHash = (Get-FileHash -LiteralPath $gameExe -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($actualExeHash -ne ([string]$Manifest.game.executableSha256).ToLowerInvariant()) {
+        throw "Unsupported or modified game executable. Expected SHA-256 $($Manifest.game.executableSha256), got $actualExeHash"
+    }
+
+    $steamApps = Split-Path -Parent (Split-Path -Parent $GameRoot)
+    $steamManifest = Join-Path $steamApps "appmanifest_$($Manifest.game.appId).acf"
+    if (Test-Path -LiteralPath $steamManifest -PathType Leaf) {
+        $steamText = Get-Content -LiteralPath $steamManifest -Raw
+        if ($steamText -match '"buildid"\s+"([0-9]+)"') {
+            if ($Matches[1] -ne [string]$Manifest.game.buildId) {
+                throw "Unsupported Steam build $($Matches[1]); expected $($Manifest.game.buildId)."
+            }
+        }
+    }
+
+    foreach ($required in $Manifest.prerequisite.files) {
+        $requiredPath = [IO.Path]::GetFullPath((Join-Path $GameRoot ([string]$required.path)))
+        if (-not (Test-Path -LiteralPath $requiredPath -PathType Leaf)) {
+            throw "$($Manifest.prerequisite.name) $($Manifest.prerequisite.version) is required ($($required.path) missing)."
+        }
+        $requiredHash = (Get-FileHash -LiteralPath $requiredPath -Algorithm SHA256).Hash.ToLowerInvariant()
+        if ($requiredHash -ne ([string]$required.sha256).ToLowerInvariant()) {
+            throw "Prerequisite integrity failure: $($required.path)"
+        }
+    }
+
+    foreach ($file in $Manifest.files) {
+        $sourcePath = [IO.Path]::GetFullPath((Join-Path $PackageRoot ([string]$file.path)))
+        if (-not (Test-Path -LiteralPath $sourcePath -PathType Leaf)) {
+            throw "Package payload file missing: $($file.path)"
+        }
+        $sourceHash = (Get-FileHash -LiteralPath $sourcePath -Algorithm SHA256).Hash.ToLowerInvariant()
+        if ($sourceHash -ne ([string]$file.sha256).ToLowerInvariant()) {
+            throw "Package payload corrupted: $($file.path)"
+        }
+    }
+}
+
 $packageRoot = (Resolve-Path -LiteralPath $PackagePath).Path
 $manifestPath = Join-Path $packageRoot "release-manifest.json"
 if (-not (Test-Path -LiteralPath $manifestPath -PathType Leaf)) {
@@ -83,23 +142,50 @@ if ($DetectOnly) {
     exit 0
 }
 
+Write-Output "Running pre-flight validation..."
+Test-PreflightChecks -GameRoot $gameRoot -PackageRoot $packageRoot -Manifest $manifest
+Write-Output "Pre-flight validation passed."
+
 $pointerPath = Join-Path $gameRoot "Security51ThaiMod.install.json"
+$needsUninstall = $false
 if (Test-Path -LiteralPath $pointerPath -PathType Leaf) {
     $pointer = Get-Content -LiteralPath $pointerPath -Raw -Encoding UTF8 | ConvertFrom-Json
     $recordPath = [string]$pointer.installRecord
     if ($recordPath -and (Test-Path -LiteralPath $recordPath -PathType Leaf)) {
         $record = Get-Content -LiteralPath $recordPath -Raw -Encoding UTF8 | ConvertFrom-Json
         if ([string]$record.modVersion -eq [string]$manifest.modVersion) {
-            Write-Output "Security 51 Thai Mod $($manifest.modVersion) is already installed."
-            exit 0
-        }
+            # Check if installed files are intact
+            $isCorrupted = $false
+            foreach ($file in $manifest.files) {
+                $targetFile = [IO.Path]::GetFullPath((Join-Path $gameRoot ([string]$file.path)))
+                if (-not (Test-Path -LiteralPath $targetFile -PathType Leaf)) {
+                    $isCorrupted = $true
+                    break
+                }
+                $fileHash = (Get-FileHash -LiteralPath $targetFile -Algorithm SHA256).Hash.ToLowerInvariant()
+                if ($fileHash -ne ([string]$file.sha256).ToLowerInvariant()) {
+                    $isCorrupted = $true
+                    break
+                }
+            }
 
-        Write-Output "Updating Security 51 Thai Mod $($record.modVersion) to $($manifest.modVersion)..."
-        & (Join-Path $packageRoot "Uninstall-ThaiMod.ps1") -GamePath $gameRoot
+            if (-not $isCorrupted) {
+                Write-Output "Security 51 Thai Mod $($manifest.modVersion) is already installed and verified intact."
+                exit 0
+            }
+            Write-Warning "Existing installation of version $($manifest.modVersion) has missing or modified files. Re-installing / repairing..."
+        } else {
+            Write-Output "Updating Security 51 Thai Mod $($record.modVersion) to $($manifest.modVersion)..."
+        }
+        $needsUninstall = $true
     } else {
-        Write-Warning "Orphaned install pointer found without backing record. Removing pointer..."
+        Write-Warning "Orphaned install pointer found without backing record. Cleaning up pointer..."
         Remove-Item -LiteralPath $pointerPath -Force
     }
+}
+
+if ($needsUninstall) {
+    & (Join-Path $packageRoot "Uninstall-ThaiMod.ps1") -GamePath $gameRoot
 }
 
 & (Join-Path $packageRoot "Install-ThaiMod.ps1") -GamePath $gameRoot -PackagePath $packageRoot
