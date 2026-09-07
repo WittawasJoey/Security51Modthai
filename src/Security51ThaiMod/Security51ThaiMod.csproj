@@ -24,6 +24,7 @@
     <Reference Include="UnityEngine.TextRenderingModule" HintPath="$(InteropDir)\UnityEngine.TextRenderingModule.dll" Private="false" />
     <Reference Include="UnityEngine.TextCoreFontEngineModule" HintPath="$(InteropDir)\UnityEngine.TextCoreFontEngineModule.dll" Private="false" />
     <Reference Include="UnityEngine.UI" HintPath="$(InteropDir)\UnityEngine.UI.dll" Private="false" />
+    <Reference Include="UnityEngine.UIModule" HintPath="$(InteropDir)\UnityEngine.UIModule.dll" Private="false" />
     <Reference Include="Unity.TextMeshPro" HintPath="$(InteropDir)\Unity.TextMeshPro.dll" Private="false" />
     <Reference Include="Assembly-CSharp" HintPath="$(InteropDir)\Assembly-CSharp.dll" Private="false" />
     <Reference Include="OdinSerializer" HintPath="$(InteropDir)\OdinSerializer.dll" Private="false" />

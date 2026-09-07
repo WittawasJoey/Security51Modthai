@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
@@ -11,6 +12,7 @@ using I2.Loc;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.LowLevel;
+using UnityEngine.UI;
 
 namespace Security51ThaiMod;
 
@@ -21,6 +23,11 @@ public sealed class Plugin : BasePlugin
     public const string PluginName = "Security 51 Thai Mod";
     public const string PluginVersion = "0.1.5";
 
+    public static ConfigEntry<bool> ConfigWatermarkEnabled;
+    public static ConfigEntry<string> ConfigWatermarkText;
+    public static ConfigEntry<string> ConfigWatermarkPosition;
+    public static ConfigEntry<float> ConfigWatermarkOpacity;
+
     private Harmony _harmony;
 
     public override void Load()
@@ -28,6 +35,30 @@ public sealed class Plugin : BasePlugin
         ModRuntime.Logger = Log;
         ModRuntime.DataDirectory = Path.Combine(Paths.PluginPath, "Security51Thai");
         ModRuntime.LoadTranslations();
+
+        ConfigWatermarkEnabled = Config.Bind(
+            "Watermark",
+            "Enabled",
+            true,
+            "แสดงลายน้ำม็อดภาษาไทยที่มุมจอ (Show Thai mod watermark on screen)");
+
+        ConfigWatermarkText = Config.Bind(
+            "Watermark",
+            "Text",
+            "Security 51 ม็อดภาษาไทย v{0} | แปลโดย WittawasJo",
+            "ข้อความลายน้ำ ({0} แทนที่ด้วยเวอร์ชันม็อด)");
+
+        ConfigWatermarkPosition = Config.Bind(
+            "Watermark",
+            "Position",
+            "BottomRight",
+            "ตำแหน่งลายน้ำ: BottomRight, BottomLeft, TopRight, TopLeft");
+
+        ConfigWatermarkOpacity = Config.Bind(
+            "Watermark",
+            "Opacity",
+            0.65f,
+            "ระดับความโปร่งใสของลายน้ำ (0.1 - 1.0)");
 
         _harmony = new Harmony(PluginGuid);
         _harmony.PatchAll(typeof(LocalizationUpdateSourcesPatch));
@@ -51,6 +82,7 @@ public sealed class Plugin : BasePlugin
 
         Log.LogInfo($"{PluginName} {PluginVersion} loaded with {ModRuntime.TranslationCount} translations.");
         ModRuntime.TryApply("plugin-load");
+        WatermarkOverlay.Initialize();
     }
 }
 
@@ -105,11 +137,14 @@ internal static class ModRuntime
         _translations = new Dictionary<string, string>(_translations, StringComparer.Ordinal);
     }
 
+    internal static TMP_FontAsset ThaiFontAsset => _thaiFontAsset;
+
     internal static void OnSceneLoaded(string sceneName)
     {
         Logger?.LogDebug($"Scene loaded: {sceneName}");
         TryApply($"SceneLoaded:{sceneName}");
         HideStrayButtonPlaceholderLabels();
+        WatermarkOverlay.EnsureVisible();
     }
 
     internal static void EnsureThaiActive(string trigger)
@@ -342,6 +377,7 @@ internal static class ModRuntime
 
         candidate.name = "Security51 Thai Dynamic Fallback";
         _thaiFontAsset = candidate;
+        WatermarkOverlay.UpdateFont(_thaiFontAsset);
         return true;
     }
 
@@ -619,5 +655,163 @@ internal static class CityOperationsWindowViewSetConfirmButtonStatePatch
     {
         if (__instance is null) return;
         ModRuntime.CleanButtonPlaceholder(__instance.confirmButton);
+    }
+}
+
+internal static class WatermarkOverlay
+{
+    private static GameObject _canvasObject;
+    private static TextMeshProUGUI _tmpText;
+    private static bool _initialized;
+
+    internal static void Initialize()
+    {
+        if (_initialized || Plugin.ConfigWatermarkEnabled is null || !Plugin.ConfigWatermarkEnabled.Value)
+            return;
+
+        try
+        {
+            CreateOverlay();
+            _initialized = true;
+        }
+        catch (Exception ex)
+        {
+            ModRuntime.Logger?.LogWarning($"Failed to initialize WatermarkOverlay: {ex.Message}");
+        }
+    }
+
+    private static void CreateOverlay()
+    {
+        if (_canvasObject != null)
+            return;
+
+        _canvasObject = new GameObject("Security51Thai_WatermarkCanvas");
+        UnityEngine.Object.DontDestroyOnLoad(_canvasObject);
+
+        var canvas = _canvasObject.AddComponent<Canvas>();
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        canvas.sortingOrder = 32767;
+
+        var scaler = _canvasObject.AddComponent<CanvasScaler>();
+        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+        scaler.referenceResolution = new Vector2(1920f, 1080f);
+        scaler.matchWidthOrHeight = 0.5f;
+
+        var group = _canvasObject.AddComponent<CanvasGroup>();
+        group.blocksRaycasts = false;
+        group.interactable = false;
+
+        var textObject = new GameObject("WatermarkText");
+        textObject.transform.SetParent(_canvasObject.transform, false);
+
+        var rectTransform = textObject.AddComponent<RectTransform>();
+        _tmpText = textObject.AddComponent<TextMeshProUGUI>();
+
+        var shadow = textObject.AddComponent<Shadow>();
+        var opacity = Mathf.Clamp(Plugin.ConfigWatermarkOpacity?.Value ?? 0.65f, 0.1f, 1.0f);
+        shadow.effectColor = new Color(0f, 0f, 0f, opacity * 0.9f);
+        shadow.effectDistance = new Vector2(1.5f, -1.5f);
+
+        ApplyPositionAndStyle(rectTransform, _tmpText);
+
+        if (ModRuntime.ThaiFontAsset != null)
+        {
+            _tmpText.font = ModRuntime.ThaiFontAsset;
+        }
+
+        UpdateText();
+    }
+
+    private static void ApplyPositionAndStyle(RectTransform rect, TextMeshProUGUI tmp)
+    {
+        var pos = Plugin.ConfigWatermarkPosition?.Value?.Trim() ?? "BottomRight";
+        var opacity = Mathf.Clamp(Plugin.ConfigWatermarkOpacity?.Value ?? 0.65f, 0.1f, 1.0f);
+
+        tmp.fontSize = 14f;
+        tmp.color = new Color(1f, 1f, 1f, opacity);
+        tmp.raycastTarget = false;
+        tmp.richText = true;
+
+        rect.sizeDelta = new Vector2(650f, 40f);
+
+        switch (pos.ToLowerInvariant())
+        {
+            case "bottomleft":
+                rect.anchorMin = new Vector2(0f, 0f);
+                rect.anchorMax = new Vector2(0f, 0f);
+                rect.pivot = new Vector2(0f, 0f);
+                rect.anchoredPosition = new Vector2(15f, 10f);
+                tmp.alignment = TextAlignmentOptions.BottomLeft;
+                break;
+            case "topright":
+                rect.anchorMin = new Vector2(1f, 1f);
+                rect.anchorMax = new Vector2(1f, 1f);
+                rect.pivot = new Vector2(1f, 1f);
+                rect.anchoredPosition = new Vector2(-15f, -10f);
+                tmp.alignment = TextAlignmentOptions.TopRight;
+                break;
+            case "topleft":
+                rect.anchorMin = new Vector2(0f, 1f);
+                rect.anchorMax = new Vector2(0f, 1f);
+                rect.pivot = new Vector2(0f, 1f);
+                rect.anchoredPosition = new Vector2(15f, -10f);
+                tmp.alignment = TextAlignmentOptions.TopLeft;
+                break;
+            case "bottomright":
+            default:
+                rect.anchorMin = new Vector2(1f, 0f);
+                rect.anchorMax = new Vector2(1f, 0f);
+                rect.pivot = new Vector2(1f, 0f);
+                rect.anchoredPosition = new Vector2(-15f, 10f);
+                tmp.alignment = TextAlignmentOptions.BottomRight;
+                break;
+        }
+    }
+
+    internal static void UpdateText()
+    {
+        if (_tmpText == null) return;
+        var template = Plugin.ConfigWatermarkText?.Value;
+        if (string.IsNullOrEmpty(template))
+        {
+            template = "Security 51 ม็อดภาษาไทย v{0} | แปลโดย WittawasJo";
+        }
+        _tmpText.text = string.Format(template, Plugin.PluginVersion);
+    }
+
+    internal static void UpdateFont(TMP_FontAsset fontAsset)
+    {
+        if (_tmpText != null && fontAsset != null)
+        {
+            _tmpText.font = fontAsset;
+        }
+    }
+
+    internal static void EnsureVisible()
+    {
+        if (Plugin.ConfigWatermarkEnabled != null && !Plugin.ConfigWatermarkEnabled.Value)
+        {
+            if (_canvasObject != null && _canvasObject.activeSelf)
+                _canvasObject.SetActive(false);
+            return;
+        }
+
+        if (_canvasObject == null)
+        {
+            CreateOverlay();
+            return;
+        }
+
+        if (!_canvasObject.activeSelf)
+            _canvasObject.SetActive(true);
+
+        if (_tmpText != null)
+        {
+            if (_tmpText.font == null && ModRuntime.ThaiFontAsset != null)
+            {
+                _tmpText.font = ModRuntime.ThaiFontAsset;
+            }
+            UpdateText();
+        }
     }
 }
